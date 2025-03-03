@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+pokemon_one = Pokemon.create!(name: "Pikachu")
+pokemon_two = Pokemon.create!(name: "Bulbizar")
+pokemon_three = Pokemon.create!(name: "Salameche")
+pokemon_four = Pokemon.create!(name: "Carapuce")
+pokemon_five = Pokemon.create!(name: "Mewtoo")
