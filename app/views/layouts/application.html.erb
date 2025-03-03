@@ -11,6 +11,55 @@
   </head>
 
   <body>
+
+  <!--navbar-->
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand justify-content-center" href="/">
+          <img src=" <%= cl_image_path ('anfwusuyah5njujbha3i') %>" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+              <div class="nav-button">
+                <a class="nav-link text-white" href="/pokemons/new">Mettre mon Pokémon à louer</a>
+              </div>
+              </li>
+              <li class="nav-item dropdown">
+                <img class="avatar dropdown-toggle border border-dark mt-1" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path('jizjqyvdasyyuzisqduu') %>" />
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Inscription</a>
+                  <a class="dropdown-item" href="#">Connexion</a>
+                  <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+                </div>
+              </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
     <%= yield %>
+
+
+<div class="container border-top mt-3">
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      © 2025 PokeLoc, Sylphe SARL.
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
