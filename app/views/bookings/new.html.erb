@@ -1,0 +1,16 @@
+<h1>VOUS ETES SUR LA VIEW BOOKING</h1>
+
+<%= form_with model: [@booking, @pokemon] do |f| %>
+<div>
+  <%= f.label "Date de départ" %>
+  <%= f.textarea :start_date %>
+</div>
+
+<div>
+  <%= f.label "Date de fin" %>
+  <%= f.textarea :start_date %>
+</div>
+
+  <% f.submit %>
+
+<% end %>
