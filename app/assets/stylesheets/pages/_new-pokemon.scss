@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+
+*{
+  font-family: "Montserrat";
+}
+
+#p-title{
+  font-family: "Press Start 2P", system-ui;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
+
+#p-paragraph{
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.p-input{
+  width: 400px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 5px;
+}
+
+.p-back{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  text-decoration: none;
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+  color: #FFDE00;
+}
+
+.p-container-back{
+  margin-top: 30px;
+}
+
+.p-submit{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin-top: 30px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+  border: none;
+  background-color: #FFDE00;
+  color: white;
+  font-weight: 600;
+}
+
+.p-parent-container{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  gap: 100px;
+}
+
+.p-left-container{
+  display: flex;
+  justify-content: center;
+  background-image: url('https://i.pinimg.com/736x/be/82/8d/be828d95d39fa952a928f370a7e0fedc.jpg');
+  background-size: cover;
+  background-position: 7px;
+  width: 600px;
+  height: 600px;
+  border-radius: 0px 40px 40px 0px;
+}
+
+
+
+.p-text-container{
+  margin-top: 100px;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
