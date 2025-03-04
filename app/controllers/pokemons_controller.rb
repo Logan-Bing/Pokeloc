@@ -14,6 +14,14 @@ class PokemonsController < ApplicationController
   def edit
   end
 
+  def update
+    if @pokemon.update
+      redirect_to pokemons_path(@pokemon)
+    else
+      render :new,status: unprocessable_entity
+    end
+  end
+
   def create
     @pokemon = Pokemon.new(set_params)
     if @pokemon.save
