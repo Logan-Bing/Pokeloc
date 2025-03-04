@@ -1,0 +1,15 @@
+<h1>Pokemon show page</h1>
+
+<div>
+
+<div>
+<%= @pokemon.name %>
+<%= @pokemon.address %>
+<%= @pokemon.price %>
+</div>
+
+<div>
+<%= link_to "Réservez ce Pokémon", new_pokemon_booking_path(@pokemon)  %>
+</div>
+
+</div>
