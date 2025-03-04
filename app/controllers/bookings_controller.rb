@@ -8,8 +8,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @booking.pokemon = @pokemon
-    @booking.save
-    redirect_to booking_path(@booking)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new, status: :enprocessable_entity
+    end
   end
 
   def show
