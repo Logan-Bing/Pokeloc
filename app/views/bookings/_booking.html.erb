@@ -1,0 +1,30 @@
+<div>
+  <p>
+    <strong> Votre prénom:</strong>
+    <%= booking.user.first_name %>
+  </p>
+
+   <p>
+    <strong> Votre nom de famille:</strong>
+    <%= booking.user.last_name %>
+  </p>
+
+  <p>
+    <strong> Nom du Pokémon:</strong>
+    <%= booking.pokemon.name %>
+  </p>
+<br>
+  <div>
+  <h5><strong>Vos dates de location:</strong></h5>
+  <p>
+    <strong>Du:</strong>
+    <%= booking.start_date %>
+  </p>
+
+  <p>
+    <strong>Au:</strong>
+    <%= booking.end_date %>
+  </p>
+  </div>
+
+</div>
