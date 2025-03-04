@@ -135,3 +135,37 @@
 input[type="search"] {
   flex-basis: 500px;
 }
+
+.parent-container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+#pokemon-img{
+  width: 300px;
+  border-radius: 20px;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px grey;
+  border-radius: 30px;
+}
+
+.info-container{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.info-container h2{
+  padding-top: 10px;
+}
+
+.img-pokemon{
+  border-radius: 30px;
+}
