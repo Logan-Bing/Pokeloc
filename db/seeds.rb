@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-pokemon_one = Pokemon.create!(name: "Pikachu")
-pokemon_two = Pokemon.create!(name: "Bulbizar")
-pokemon_three = Pokemon.create!(name: "Salameche")
-pokemon_four = Pokemon.create!(name: "Carapuce")
-pokemon_five = Pokemon.create!(name: "Mewtoo")
+pokemon_one = Pokemon.create!(name: "Pikachu", user_id: 1)
+pokemon_two = Pokemon.create!(name: "Bulbizarre", user_id: 1)
+pokemon_three = Pokemon.create!(name: "Salameche", user_id: 1)
+pokemon_four = Pokemon.create!(name: "Carapuce", user_id: 1)
+pokemon_five = Pokemon.create!(name: "Mewtwo", user_id: 1)
