@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_pokemon
+  before_action :find_pokemon, except: [:accept, :decline]
 
   def new
     @booking = Booking.new
@@ -25,11 +25,23 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:id])
     @booking.status = true
+    @pokemon = @booking.pokemon
+    if @booking.save
+      redirect_to pokemon_booking_path(@pokemon, @booking)
+   else
+     render :new, status: :unprocessable_entity
+   end
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = false
+    @pokemon = @booking.pokemon
+    if @booking.save
+      redirect_to pokemon_booking_path(@pokemon, @booking)
+   else
+     render :new, status: :unprocessable_entity
+   end
   end
 
   private

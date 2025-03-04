@@ -1,9 +1,9 @@
 
 <div class="infos-booking">
-  
+
 <div class="container">
 
-  <% if current_user.id == @booking.pokemon.user_id %>
+  <% if current_user == @booking.pokemon.user %>
   <%= render "booking_review", booking: @booking %>
   <% else %>
   <%= render "booking", booking: @booking %>

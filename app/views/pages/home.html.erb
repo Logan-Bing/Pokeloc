@@ -20,6 +20,7 @@
 <div class="parent-container">
  <% @pokemons.each do |pokemon| %>
   <div class="main-container">
+  <%= link_to "", pokemon_path(pokemon) %>
     <div class="img-container">
       <%= cl_image_tag(pokemon.photo.key, width: 300, height: 300, crop: :fill, class: "img-pokemon" )%>
     </div>
