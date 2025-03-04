@@ -10,6 +10,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
+    @bookings = Booking.all
   end
 
   def new
@@ -23,7 +24,7 @@ class PokemonsController < ApplicationController
     if @pokemon.update
       redirect_to pokemons_path(@pokemon)
     else
-      render :new,status: unprocessable_entity
+      render :new,status: :unprocessable_entity
     end
   end
 
@@ -46,7 +47,7 @@ class PokemonsController < ApplicationController
   private
 
   def set_params
-    params.require(:pokemon).permit(:name, :price, :address )
+    params.require(:pokemon).permit(:name, :price, :address)
   end
 
   def find_id

@@ -1,17 +1,21 @@
 
 
-
-<%= form_with model: [@pokemon, @booking] do |f| %>
+<div class="container">
+<h1>New booking</h1>
+<%= simple_form_for [@pokemon, @booking] do |f| %>
 <div>
-  <%= f.label "Date de départ" %>
-  <%= f.text_field :start_date %>
+  <%= f.input :start_date,
+  as: :string,
+  input_html: { data: { controller: "datepicker" } } %>
 </div>
 
 <div>
-  <%= f.label "Date de fin" %>
-  <%= f.text_field :end_date %>
+  <%= f.input :end_date,
+  as: :string,
+  input_html: { data: { controller: "datepicker" } } %>
 </div>
 
   <%= f.submit %>
 
 <% end %>
+</div>
