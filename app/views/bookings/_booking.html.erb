@@ -1,27 +1,30 @@
-<div id="<%= dom_id booking %>">
+<div>
   <p>
-    <strong> First Name:</strong>
+    <strong> Votre prénom:</strong>
     <%= booking.user.first_name %>
   </p>
 
    <p>
-    <strong> Last Name:</strong>
+    <strong> Votre nom de famille:</strong>
     <%= booking.user.last_name %>
   </p>
 
   <p>
-    <strong> Pokemon Name:</strong>
+    <strong> Nom du Pokémon:</strong>
     <%= booking.pokemon.name %>
   </p>
-
+<br>
+  <div>
+  <h5><strong>Vos dates de location:</strong></h5>
   <p>
-    <strong>Start date:</strong>
+    <strong>Du:</strong>
     <%= booking.start_date %>
   </p>
 
   <p>
-    <strong>End date:</strong>
+    <strong>Au:</strong>
     <%= booking.end_date %>
   </p>
+  </div>
 
 </div>
