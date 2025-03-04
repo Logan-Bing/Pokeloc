@@ -1,0 +1,39 @@
+<div>
+<h1> Une demande de réservation vient d'arriver</h1>
+<br>
+  <p>
+    <strong> Prénom du client:</strong>
+    <%= booking.user.first_name %>
+  </p>
+
+   <p>
+    <strong> Nom du client:</strong>
+    <%= booking.user.last_name %>
+  </p>
+
+  <p>
+    <strong> Nom du Pokémon:</strong>
+    <%= booking.pokemon.name %>
+  </p>
+<br>
+  <div>
+  <h5><strong>Les dates demandées:</strong></h5>
+  <p>
+    <strong>Du:</strong>
+    <%= booking.start_date %>
+  </p>
+
+  <p>
+    <strong>Au:</strong>
+    <%= booking.end_date %>
+  </p>
+  </div>
+
+  <div>
+  <h5><strong>Souhaitez-vous accepter la demande ?</strong></h5>
+
+  <button class="btn btn-success">Accepter</button>
+  <button class="btn btn-danger">Refuser</button>
+  </div>
+
+</div>

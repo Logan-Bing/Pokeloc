@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(set_params)
     @booking.pokemon = @pokemon
     @booking.user_id = current_user.id
+    @booking.status = nil
 
       if @booking.save
          redirect_to pokemon_booking_path(@pokemon, @booking)
@@ -19,6 +20,16 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = true
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = false
   end
 
   private
