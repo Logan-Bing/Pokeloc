@@ -1,0 +1,13 @@
+
+  <%= simple_form_for [pokemon, booking] do |f| %>
+
+    <div>
+      <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+    </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+
+  <% end %>
