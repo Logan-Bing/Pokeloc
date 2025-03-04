@@ -1,0 +1,14 @@
+
+<div class="container">
+<h1>Create a new list</h1>
+
+<%= simple_form_for(@pokemon) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%#= f.input :photo %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back", root_path, class: 'mt-3 btn btn-success' %>
+</div>

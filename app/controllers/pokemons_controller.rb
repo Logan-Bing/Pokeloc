@@ -1,5 +1,6 @@
 class PokemonsController < ApplicationController
   before_action :find_id, only:[:edit, :show, :update, :destroy]
+
   def index
     @pokemons = Pokemon.all
   end
@@ -18,12 +19,16 @@ class PokemonsController < ApplicationController
   def edit
   end
 
+  def update
+  end
+
   def create
     @pokemon = Pokemon.new(set_params)
+    @pokemon.user_id = current_user.id
     if @pokemon.save
-      redirect_to pokemons_path(@pokemon)
+      redirect_to pokemon_path(@pokemon)
     else
-      render :new,status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
