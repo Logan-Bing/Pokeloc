@@ -19,10 +19,10 @@ class BookingsController < ApplicationController
   private
 
   def set_params
-    params.require(:bookings).permit(:)
+    params.require(:bookings).permit(:pokemon_id)
   end
 
   def find_pokemon
-    @pokemon = Pokemon.find(params[:id])
+    @pokemon = Pokemon.find(params[:pokemon_id])
   end
 end
