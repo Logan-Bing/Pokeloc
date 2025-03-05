@@ -1,0 +1,52 @@
+.s-main-container{
+  margin: 70px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  gap: 50px;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 12px;
+}
+
+.s-text-container{
+  margin-top: 20px;
+}
+
+.s-img{
+  width: 300px;
+}
+
+.s-parent-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.s-button-container{
+  display: flex;
+  gap: 30px;
+}
+
+.s-button{
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.valid{
+  background-color: green;
+  color: white;
+}
+
+.refuse{
+  background-color: red;
+  color: white;
+}
+
+.back{
+  color: black;
+}
