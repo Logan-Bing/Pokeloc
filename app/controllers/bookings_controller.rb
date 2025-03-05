@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_pokemon, except: [:accept, :decline, :index]
+  before_action :find_pokemon, except: [:accept, :decline, :index, :my_bookings]
 
   def index
     @bookings = Booking.all
@@ -46,6 +46,13 @@ class BookingsController < ApplicationController
    else
      render :new, status: :unprocessable_entity
    end
+  end
+
+  def my_bookings
+    @bookings = Booking.all
+    @my_bookings = @bookings.select do |booking|
+      booking.user_id == current_user.id
+    end
   end
 
   private
