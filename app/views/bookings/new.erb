@@ -1,3 +1,5 @@
+
+
 <div class="booking-container">
   <div class="booking-left-container">
     <div class="background-img">
@@ -5,8 +7,9 @@
   </div>
   <div class="text-booking-container">
     <div class="text-booking">
+      <h1 class="title">Réserve ton Pokemon!!!</h1>
       <%= render "form", pokemon: @pokemon, booking: @booking %>
-      <div class="p-container-back">
+      <div class="booking-link">
         <%= link_to "Accueil", root_path, class: 'p-back' %>
         <%= link_to "Retour au Pokemon", pokemon_path(@pokemon), class: 'p-back' %></div>
       </div>
