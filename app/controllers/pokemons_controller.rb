@@ -67,6 +67,13 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def my_pokemons
+    @pokemons = Pokemon.all
+    @my_pokemons = @pokemons.select do |pokemon|
+      pokemon.user_id == current_user.id
+    end
+  end
+
   private
 
   def set_params
