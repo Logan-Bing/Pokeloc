@@ -1,4 +1,12 @@
 <div>
+<% if booking.status == nil %>
+<h1> Votre demande de réservation est en attente de confirmation</h1>
+<% elsif booking.status == true %>
+<h1> Votre demande de réservation est confirmée !</h1>
+<% else %>
+<h1> Votre demande de réservation a été refusée par le dresseur de Pokémon</h1>
+<% end %>
+<br>
   <p>
     <strong> Votre prénom:</strong>
     <%= booking.user.first_name %>

@@ -9,4 +9,8 @@ class PagesController < ApplicationController
       }
     end
   end
+
+  def show
+    @pokemon = Pokemon.find(params(:id))
+  end
 end

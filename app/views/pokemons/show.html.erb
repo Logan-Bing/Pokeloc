@@ -1,11 +1,11 @@
+
+
+<div>
 <h1>Pokemon show page</h1>
-
 <div>
-
-<div>
-<%= @pokemon.name %>
-<%= @pokemon.address %>
-<%= @pokemon.price %>
+  <%= @pokemon.name %>
+  <%= @pokemon.address %>
+  <%= @pokemon.price %>
 </div>
 
 <div style="width: 600px; height: 600px;"
@@ -15,7 +15,17 @@
 </div>
 
 <div>
-<%= link_to "Réservez ce Pokémon", new_pokemon_booking_path(@pokemon)  %>
+  <% if current_user == @pokemon.user %>
+    <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon) %>
+    <br>
+    <%= link_to "Retirer votre annonce", pokemon_path(@pokemon),
+  data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de l'annonce #{@pokemon.name}?"} %>
+  <% else %>
+    <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon)
+     %>
+  <% end %>
 </div>
+
+<%= link_to "Retour", root_path %>
 
 </div>
