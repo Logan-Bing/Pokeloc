@@ -175,6 +175,7 @@ input[type="search"] {
   flex-direction: column;
   box-shadow: 1px 1px 5px grey;
   border-radius: 30px;
+  background-color: white;
 }
 
 .info-container{
@@ -187,6 +188,7 @@ input[type="search"] {
   padding-top: 10px;
 }
 
-.img-pokemon{
-  border-radius: 30px;
+.link{
+  text-decoration: none;
+  color: black;
 }
