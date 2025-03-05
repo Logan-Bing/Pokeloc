@@ -28,6 +28,22 @@
     </div>
   </div>
 
+<div class="parent-container">
+  <% @pokemons.each do |pokemon| %>
+    <%= link_to pokemon_path(pokemon), class: "link" do %>
+      <div class="main-container">
+        <div>
+          <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
+        </div>
+        <div class="info-container">
+          <h2><%= pokemon.name %></h2>
+          <h2><%= pokemon.address %></h2>
+          <h2><%= pokemon.price %></h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <!--footer-->
 <%= render "pages/shared/footer" %>

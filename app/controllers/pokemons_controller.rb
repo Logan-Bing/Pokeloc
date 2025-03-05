@@ -70,7 +70,7 @@ class PokemonsController < ApplicationController
   private
 
   def set_params
-    params.require(:pokemon).permit(:name, :price, :address, photos: [])
+    params.require(:pokemon).permit(:name, :price, :address, :photo)
   end
 
   def find_id
