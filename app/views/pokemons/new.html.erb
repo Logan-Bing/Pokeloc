@@ -1,18 +1,16 @@
 
 
 <div class="p-parent-container">
-  <div class="p-left-container">
+ <div class="p-left-container">
+  <div class="p-form-container">
     <div class="p-text-container">
       <h1 id="p-title" >Créer ton nouveau <br> Pokemon</h1>
-      <p id="p-paragraph" >Créer votre pokémon pour ensuite le louer !</p>
     </div>
-  </div>
-
-  <div class="p-form-container">
-    <%= simple_form_for(@pokemon) do |f| %>
+    <%= simple_form_for(@pokemon)do |f| %>
       <%= f.input :name, input_html: { class:"p-input" }%>
       <%= f.input :address, input_html: { class:"p-input" } %>
       <%= f.input :price, input_html: { class:"p-input" } %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%#= f.input :photo %>
       <%= f.submit "Créer mon pokémon",  class:"p-submit"%>
     <% end %>
@@ -20,4 +18,5 @@
       <%= link_to "Back", root_path, class: 'p-back' %>
     </div>
   </div>
+ </div>
 </div>

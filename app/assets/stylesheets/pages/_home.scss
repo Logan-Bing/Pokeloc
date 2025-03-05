@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+
+body{
+  background: rgb(255,222,0);
+  background: linear-gradient(0deg, rgba(255,222,0,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+}
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -18,9 +25,8 @@
 }
 
 .nav-button {
-  background-color: #d73851;
+  background-color: #FFDE00;
   padding: 2px;
-  border-radius: 30px;
   margin-right: 10px;
   color: white;
 }
@@ -29,15 +35,22 @@
   font-size: small;
 }
 
+.sacha{
+  width: 150px;
+}
+
 .banner {
-  background-size:auto;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  background-size:cover;
   background-position: center;
-  padding: 200px 0;
+  padding: 40px 0;
   text-align: center;
 
   h1 {
     margin: 0;
-    color: white;
+    color: #d73851;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 64px;
     font-weight: bold;
@@ -45,11 +58,17 @@
 
   p {
     font-size: 20px;
-    color: white;
+    color: #d73851;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Press Start 2P';
   }
 }
+
+.text-container{
+  margin: 0px 0px 50px 0px;
+}
+
 
 .footer {
   background: #F4F4F4;
@@ -90,14 +109,13 @@
   -webkit-box-direction: normal;
   flex-direction: column;
   -webkit-box-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   align-items: center;
 }
 
 .flex-form input[type="submit"] {
-  background: #ef3f5a;
-  border: 1px solid #ef3f5a;
+  background: #FFDE00;
+  border: 1px solid #FFDE00;
   color: #fff;
   padding: 0 30px;
   cursor: pointer;
@@ -106,9 +124,14 @@
   transition: all 0.2s;
 }
 
+.map-container{
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(215, 56, 81, 0.4) 5px 5px, rgba(215,56,81, 0.3) 10px 10px, rgba(214, 56, 81, 0.2) 15px 15px, rgba(214, 56, 81, 0.1) 20px 20px, rgba(214, 56, 81, 0.05) 25px 25px;
+}
+
 .flex-form input[type="submit"]:hover {
-  background: #d73851;
-  border: 1px solid #d73851;
+  background: #FFDE00;
+  border: 1px solid #FFDE00;
 }
 
 .flex-form {
@@ -117,6 +140,7 @@
   position: relative;
   box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
   border-radius: 40px;
+  margin-bottom: 40px;
 }
 
 .flex-form > * {
