@@ -1,31 +1,66 @@
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
+      <div class="container-fluid">
+        <%= link_to "/", class: "navbar-brand" do %>
+        <%= cl_image_tag ('anfwusuyah5njujbha3i') %>
+        <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <div class="nav-button">
+              <li class="nav-item active">
+                <%= link_to "Mettre mon Pokémon à louer", "/pokemons/new", class: "nav-link text-white" %>
+              </li>
+            </div>
+              <li class="nav-item dropdown">
+                <%= cl_image_tag ('jizjqyvdasyyuzisqduu'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "Messages", "#", class: "dropdown-item" %>
+                    <%= link_to "Mes réservations", "#", class: "dropdown-item" %>
+                    <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+                  </div>
+              </li>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% end %>
+          </div>
+      </div>
+    </div>
 <div>
-<h1>Pokemon show page</h1>
-<div>
-  <%= @pokemon.name %>
-  <%= @pokemon.address %>
-  <%= @pokemon.price %>
-</div>
 
-<div style="width: 600px; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
 
-<div>
-  <% if current_user == @pokemon.user %>
-    <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon) %>
-    <br>
-    <%= link_to "Retirer votre annonce", pokemon_path(@pokemon),
-  data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de l'annonce #{@pokemon.name}?"} %>
-  <% else %>
-    <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon)
-     %>
-  <% end %>
-</div>
-
-<%= link_to "Retour", root_path %>
-
+<div class="s-main-container">
+  <div class="s-title-container">
+    <h2>Votre Pokémon est prêt à être loué !</h2>
+  </div>
+  <div class="s-parent-container">
+    <div class="s-img-container">
+      <img class="s-img" src="https://www.pngarts.com/files/3/Pokemon-Characters-PNG-Picture.png" alt="">
+    </div>
+    <div class="s-infos-container">
+      <div style="width: 400px; height: 300px; border-radius: 20px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="s-text-container">
+        <span>Nom du Pokémon: </span><%= @pokemon.name %> <br>
+        <span>Adresse du Pokémon: </span><%= @pokemon.address %> <br>
+        <span>Prix du Pokémon: </span><%= @pokemon.price %><span>€</span>
+      </div>
+    </div>
+  </div>
+  <div class="s-button-container">
+      <% if current_user == @pokemon.user %>
+        <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon), class:"s-button valid" %>
+        <%= link_to "Retirer votre annonce", pokemon_path(@pokemon),class:"s-button refuse",
+      data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de l'annonce #{@pokemon.name}?"} %>
+      <% else %>
+        <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon),class:"s-button"%>
+      <% end %>
+      <%= link_to "Retour", root_path, class:"s-button back"%>
+  </div>
 </div>
