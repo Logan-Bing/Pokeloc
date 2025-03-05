@@ -1,9 +1,8 @@
-<%= render "pages/shared/navbar" %>
+<h1>Pokemon show page</h1>
 
-<div class="container">
+<div>
 
-<div class="pokemon-card">
-  <%= cl_image_tag(@pokemon.photo.key, width: 300, height: 300, crop: :fill, class: "img-pokemon" )%>
+<div>
 <%= @pokemon.name %>
 <%= @pokemon.address %>
 <%= @pokemon.price %>

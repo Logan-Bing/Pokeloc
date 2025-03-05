@@ -1,0 +1,26 @@
+.booking-container{
+  display: flex;
+
+}
+
+.background-img{
+  background-image: url('https://pbs.twimg.com/media/D_h2xB4UIAEiOm4.jpg');
+  background-size: cover;
+  background-position: right;
+  width: 600px;
+  height: 750px;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.text-booking-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-booking{
+  margin-top: 100px;
+  padding: 20px;
+  border-color: black;
+
+}
