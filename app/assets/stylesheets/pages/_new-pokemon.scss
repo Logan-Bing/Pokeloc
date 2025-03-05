@@ -10,11 +10,9 @@
   font-size: 28px;
   font-weight: 600;
   font-style: normal;
-  color: white;
 }
 
 #p-paragraph{
-  color: white;
   font-family: 'Montserrat';
 }
 
@@ -54,23 +52,5 @@
   align-items: center;
   background-color: white;
   gap: 100px;
-}
-
-.p-left-container{
-  display: flex;
-  justify-content: center;
-  background-image: url('https://i.pinimg.com/736x/be/82/8d/be828d95d39fa952a928f370a7e0fedc.jpg');
-  background-size: cover;
-  background-position: 7px;
-  width: 600px;
   height: 750px;
-  border-radius: 0px 40px 40px 0px;
-}
-
-
-
-.p-text-container{
-  margin-top: 100px;
-  padding: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }

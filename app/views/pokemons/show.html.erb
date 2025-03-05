@@ -8,6 +8,12 @@
 <%= @pokemon.price %>
 </div>
 
+<div style="width: 600px; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div>
 <%= link_to "Réservez ce Pokémon", new_pokemon_booking_path(@pokemon)  %>
 </div>

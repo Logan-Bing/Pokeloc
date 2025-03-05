@@ -11,7 +11,18 @@ class PokemonsController < ApplicationController
 
   def show
     @bookings = Booking.all
+
+    @pokemons = Pokemon.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude
+        # info_window_html: render_to_string(partial: "info_window", locals: {pokemon: @pokemon })
+      }
+    end
   end
+
 
   def new
     @pokemon = Pokemon.new
@@ -47,7 +58,7 @@ class PokemonsController < ApplicationController
   private
 
   def set_params
-    params.require(:pokemon).permit(:name, :price, :address)
+    params.require(:pokemon).permit(:name, :price, :address, photos: [])
   end
 
   def find_id
