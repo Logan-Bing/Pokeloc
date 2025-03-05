@@ -1,8 +1,12 @@
 
 <div class="infos-booking">
-  
+
 <div class="container">
-<h1> Votre demande de réservation est confirmée !</h1>
-<br>
-<%= render "booking", booking: @booking %>
+
+  <% if current_user == @booking.pokemon.user %>
+  <%= render "booking_review", booking: @booking %>
+  <% else %>
+  <%= render "booking", booking: @booking %>
+  <% end %>
+
 </div>
