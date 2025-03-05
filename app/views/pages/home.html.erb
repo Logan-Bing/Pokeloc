@@ -33,9 +33,8 @@
     <%= link_to pokemon_path(pokemon), class: "link" do %>
       <div class="main-container">
         <div>
-        <% if pokemon.photo.attached? %>
-          <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
-          <% else %>
+          <% if pokemon.photo.attached?%>
+            <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
           <% end %>
         </div>
         <div class="info-container">
