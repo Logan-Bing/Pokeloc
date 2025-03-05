@@ -1,3 +1,22 @@
-<h1>Edit Pokemon page</h1>
+<div class="p-parent-container">
+  <div class="p-left-container">
+    <div class="p-text-container">
+      <h1 id="p-title" >Editer votre annonce <br> Pokemon</h1>
+    </div>
+  </div>
 
-<%= link_to "Retour", pokemon_path(@pokemon) %>
+  <div class="p-form-container">
+    <%= simple_form_for(@pokemon) do |f| %>
+      <%= f.input :name, label: "Nom", input_html: { class:"p-input" }%>
+      <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
+      <%= f.input :price, label: "Prix", input_html: { class:"p-input" } %>
+      <%#= f.input :photo %>
+      <%= f.submit "Valider les modifications",  class:"p-submit"%>
+    <% end %>
+    <div class="p-container-back">
+      <%= link_to "Retour", root_path, class: 'p-back' %>
+    </div>
+  </div>
+</div>
+
+<%= render "pages/shared/footer" %>
