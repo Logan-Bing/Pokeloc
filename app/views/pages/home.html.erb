@@ -2,7 +2,7 @@
 <%= render "pages/shared/navbar" %>
 
 <!--banner-->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path('xphtohpwnlzq2whzpw89', gravity: :south) %>');">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path('xphtohpwnlzq2whzpw89') %>');">
     <div class="container">
       <h1>PokeLoc</h1>
       <p>Louez votre Pokémon !</p>
@@ -22,7 +22,12 @@
   <%= link_to pokemon_path(pokemon), class: "text-decoration-none text-black" do %>
     <div class="main-container">
       <div class="img-container">
+      <% if pokemon.photo.attached? %>
         <%= cl_image_tag(pokemon.photo.key, width: 300, height: 300, crop: :fill, class: "img-pokemon" )%>
+      <% else %>
+
+      <% end %>
+
       </div>
       <div class="info-container">
         <h2><%= pokemon.name %></h2>
