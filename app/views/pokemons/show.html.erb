@@ -1,15 +1,22 @@
+
+
+<div>
 <h1>Pokemon show page</h1>
-
 <div>
-
-<div>
-<%= @pokemon.name %>
-<%= @pokemon.address %>
-<%= @pokemon.price %>
+  <%= @pokemon.name %>
+  <%= @pokemon.address %>
+  <%= @pokemon.price %>
 </div>
 
 <div>
-<%= link_to "Réservez ce Pokémon", new_pokemon_booking_path(@pokemon)  %>
+  <% if current_user == @pokemon.user %>
+    <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon) %>
+  <% else %>
+    <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon)
+     %>
+  <% end %>
 </div>
+
+<%= link_to "Retour", root_path %>
 
 </div>
