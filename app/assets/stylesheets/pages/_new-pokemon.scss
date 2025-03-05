@@ -5,6 +5,10 @@
   font-family: "Montserrat";
 }
 
+.p-text-container{
+  width: 500px;
+}
+
 #p-title{
   font-family: "Press Start 2P", system-ui;
   font-size: 28px;
@@ -48,9 +52,11 @@
 }
 
 .p-parent-container{
+  margin: 30px auto;
   display: flex;
   align-items: center;
-  background-color: white;
+  justify-content: center;
   gap: 100px;
   height: 750px;
+  width: 500px;
 }

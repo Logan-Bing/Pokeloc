@@ -1,12 +1,14 @@
 
 <div class="infos-booking">
 
-<div class="container">
+  <div class="container">
 
-  <% if current_user == @booking.pokemon.user %>
-  <%= render "booking_review", booking: @booking %>
-  <% else %>
-  <%= render "booking", booking: @booking %>
-  <% end %>
+    <% if current_user == @booking.pokemon.user %>
+    <%= render "booking_review", booking: @booking %>
+    <% else %>
+    <%= render "booking", booking: @booking %>
+    <% end %>
 
+  </div>
+  
 </div>
