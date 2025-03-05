@@ -26,18 +26,7 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       class="map-container">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path('xphtohpwnlzq2whzpw89') %>)">
-    <div class="container">
-      <h1>PokeLoc</h1>
-      <p>Louez votre Pokémon !</p>
-        <div class="cover">
-          <form class="flex-form" action="/search">
-            <%# <label for="from">Pokemon</label> %>
-            <input type="text" placeholder="Ex : Pikachu..." name="search">
-            <input type="submit" value="Rechercher">
-          </form>
-        </div>
-    </div>
-  </div>
+</div>
 
 
 <div class="parent-container">
@@ -53,11 +42,11 @@
   <%= link_to pokemon_path(pokemon), class: "text-decoration-none text-black" do %>
     <div class="main-container">
       <div class="img-container">
-      <% if pokemon.photo.attached? %>
-        <%= cl_image_tag(pokemon.photo.key, width: 300, height: 300, crop: :fill, class: "img-pokemon" )%>
-      <% else %>
+      <%# <% if pokemon.photo.attached? %> %>
+        <%# <%= cl_image_tag(pokemon.photo.key, width: 300, height: 300, crop: :fill, class: "img-pokemon" )%> %>
+      <%# <% else %> %>
 
-      <% end %>
+      <%# <% end %> %>
 
       </div>
       <div class="info-container">
