@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :find_pokemon, except: [:accept, :decline]
+  before_action :find_pokemon, except: [:accept, :decline, :index]
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @booking = Booking.new
