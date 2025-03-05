@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+  get "/search", to: "pokemons#search"
+
   patch "accept/:id", to: "bookings#accept", as: :accept
   patch "refuse/:id", to: "bookings#decline", as: :decline
 

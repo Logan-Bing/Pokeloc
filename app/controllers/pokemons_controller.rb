@@ -21,8 +21,8 @@ class PokemonsController < ApplicationController
   end
 
   def update
-    if @pokemon.update
-      redirect_to pokemons_path(@pokemon)
+    if @pokemon.update(set_params)
+      redirect_to pokemon_path(@pokemon)
     else
       render :new,status: :unprocessable_entity
     end
@@ -39,10 +39,22 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
-    @pokemon.delete
-    redirect_to pokemons_path
+    @pokemon.destroy
+    redirect_to tasks_path, status: :see_other
   end
 
+  def search
+    @pokemons = Pokemon.all
+    tmp = []
+    if params[:search].downcase
+      @pokemons.each do |pokemon|
+        if pokemon.name.downcase.match?(params[:search])
+          tmp.push(pokemon)
+        end
+      end
+      @pokemons = tmp
+    end
+  end
 
   private
 
