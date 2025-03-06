@@ -1,0 +1,109 @@
+.b-parent-container{
+  margin-top: 80px;
+  margin-left: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.b-icon{
+  opacity: 0.4;
+}
+
+.b-back{
+  text-decoration: none;
+  color: black;
+  opacity: 0.4;
+}
+
+.all-status{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.b-title-container h1{
+  margin: 0;
+}
+
+
+
+.b-text-container{
+  text-align: left;
+  width: 800px;
+  background-color: rgba(73, 253, 70, 0.5);
+  border-radius: 15px;
+  height: 60px;
+}
+
+.b-text-container p {
+  color: #606060;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding: 15px;
+}
+
+#progress{
+  background-color: rgba(253, 247, 70, 0.2);
+  border: 1px solid #FDF746;
+}
+
+#progress-text{
+  background-color: rgba(253, 247, 70, 0.5)
+}
+
+#refuse-text{
+  background-color: rgba(253, 70, 70, 0.5);
+}
+
+#refuse{
+  background-color: rgba(253, 70, 70, 0.2);
+  border: 1px solid #FD4646;
+}
+
+.b-status-container{
+  width: 800px;
+  background-color: rgba(73, 253, 70, 0.2);
+  border-radius: 15px;
+  padding-bottom: 30px;
+  border: 1px solid #00DD16;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.b-infos-container{
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-right: 50px;
+}
+
+.b-img{
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.b-img-container{
+  padding: 5px;
+}
+
+.booking-container{
+  margin-left: 30px;
+}
+
+.b-booking{
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.signet{
+  font-size: 12px;
+  opacity: 0.4;
+}
