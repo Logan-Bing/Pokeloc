@@ -1,6 +1,10 @@
 <%= render "pages/shared/navbar" %>
 
 <div class="container">
+  <div class="m-back-container">
+    <i class="fa-solid fa-arrow-left b-icon"></i>
+    <%= link_to "Retour", root_path, class:"b-back" %>
+  </div>
   <% if @my_pokemons.length == 0 %>
     <h1>Vous n'avez pas d'annonces publiées</h1>
   <% else %>

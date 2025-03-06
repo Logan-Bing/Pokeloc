@@ -8,6 +8,10 @@
   </div>
 
   <div class="p-form-container">
+    <div class="back-container mb-3">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", pokemon_path(@pokemon), class:"b-back" %>
+    </div>
     <%= simple_form_for(@pokemon) do |f| %>
       <%= f.input :name, label: "Nom", input_html: { class:"p-input" }%>
       <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
@@ -15,9 +19,6 @@
       <%= f.input :photo %>
       <%= f.submit "Valider les modifications",  class:"p-submit"%>
     <% end %>
-    <div class="p-container-back">
-      <%= link_to "Retour", pokemon_path(@pokemon), class: 'p-back' %>
-    </div>
   </div>
 </div>
 
