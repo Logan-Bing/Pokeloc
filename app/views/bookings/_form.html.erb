@@ -1,6 +1,8 @@
 
-  <%= simple_form_for [pokemon, booking] do |f| %>
-      <%= f.input :start_date, label: "Date de début", as: :string, input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :end_date, label: "Date de fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
-      <%= f.submit "Réserver", class:"p-submit"%>
-  <% end %>
+<%= simple_form_for [pokemon, booking] do |f| %>
+  <div data-controller = "datepicker" >
+    <%= f.input :start_date, label: "Date de début", as: :string, input_html: { data: { datepicker_target: "start" } } %>
+    <%= f.input :end_date, as: :hidden, input_html: { data: { datepicker_target: "end" } } %>
+    <%= f.submit "Réserver", class:"p-submit"%>
+  </div>
+<% end %>
