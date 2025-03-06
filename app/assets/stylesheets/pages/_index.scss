@@ -1,11 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
 @import "new-pokemon";
 @import "booking";
+
 @import "show-pokemon";
-@import "new-bookings";
 @import "my-pokemons";
-@import "footer";
+
+
+@import "new-bookings";
 @import "my-booking";
+@import "show-booking";
+
+@import "footer";
 @import "navbar";
 @import "edit";
