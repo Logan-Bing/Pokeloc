@@ -1,3 +1,11 @@
+h1 {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 30px;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -42,8 +50,10 @@
   padding: 10px 20px 10px 20px;
   border-radius: 15px;
   color: #FFDE00;
+  margin-bottom: 100px;
 }
 
-.p-container-back{
-  margin-top: 30px;
+.m-back-container {
+  margin-top: 50px;
+  padding-left: 75px;
 }

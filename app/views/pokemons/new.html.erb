@@ -1,40 +1,31 @@
-
+<%= render "pages/shared/navbar" %>
 
 <div class="p-parent-container">
  <div class="p-left-container">
   <div class="p-form-container">
+    <div class="back-container">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", root_path, class:"b-back" %>
+    </div>
     <div class="p-text-container">
       <h1 id="p-title" >Créer une nouvelle annonce <br> Pokemon</h1>
     </div>
-    <%= simple_form_for(@pokemon)do |f| %>
-      <%= f.input :name, label: "Nom du Pokémon",input_html: { class:"p-input" }%>
-      <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
-      <%= f.input :price, label: "Prix par jour", input_html: { class:"p-input" } %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Enregistrer mon annonce Pokémon",  class:"p-submit"%>
-    <% end %>
-    <div class="p-container-back">
-      <%= link_to "Retour", root_path, class: 'p-back' %>
+    <div class="p-info-container">
+    <div class="p-image">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5619639e-bfa1-4473-af77-5d7edc19553b/de52lrr-3db693e1-584f-4652-94c8-33d7b69b914c.png/v1/fill/w_909,h_879,q_70,strp/cheer_pikachu_by_pink_lady03_de52lrr-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTkwIiwicGF0aCI6IlwvZlwvNTYxOTYzOWUtYmZhMS00NDczLWFmNzctNWQ3ZWRjMTk1NTNiXC9kZTUybHJyLTNkYjY5M2UxLTU4NGYtNDY1Mi05NGM4LTMzZDdiNjliOTE0Yy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.OpsuYNa8zpfcwaWcGRFc_9ipG0Uzt5zoupqRWONgG8o" alt="">
+    </div>
+    <div class="p-form">
+      <%= simple_form_for(@pokemon)do |f| %>
+        <%= f.input :name, label: "Nom du Pokémon",input_html: { class:"p-input" }%>
+        <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
+        <%= f.input :price, label: "Prix par jour", input_html: { class:"p-input" } %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Enregistrer mon annonce Pokémon",  class:"p-submit"%>
+      <% end %>
+    </div>
     </div>
   </div>
  </div>
 </div>
 
-
-<%# <div class="form">
-  <div class="p-header">
-    <h2>Ajoute ton nouveau Pokémon</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit magnam dolore porro iste vitae </p>
-    </div>
-  <div class="p-body">
-    <div class="pagination">
-      <div class="number active">1</div>
-      <div class="bar"></div>
-      <div class="number">2</div>
-      <div class="bar"></div>
-      <div class="number">3</div>
-      <div class="bar"></div>
-    </div>
-    <div class="steps"></div>
-  </div>
-</div> %>
+<%= render "pages/shared/footer" %>

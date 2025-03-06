@@ -2,38 +2,43 @@
 
 
 <div class="s-main-container">
+  <div class="back-container">
+    <i class="fa-solid fa-arrow-left b-icon"></i>
+    <%= link_to "Retour", root_path, class:"b-back" %>
+  </div>
   <div class="s-title-container">
     <h1><%= @pokemon.name %></h1>
   </div>
   <div class="s-parent-container">
-    <div class="s-img-container">
-    <% if @pokemon.photo.attached? %>
-      <%= cl_image_tag @pokemon.photo.key, width: 300, height: 300, crop: :fill, gravity: :face %>
-      <% else %>
-      <img src="app/assets/images/pikachu-avatar.jpg" alt="">
-      <% end %>
-    </div>
-    <div class="s-infos-container">
-      <div style="width: 400px; height: 300px; border-radius: 20px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="s-container">
+      <div class="s-img-container">
+      <% if @pokemon.photo.attached? %>
+        <%= cl_image_tag @pokemon.photo.key, width: 300, height: 300, crop: :fill, gravity: :face %>
+        <% else %>
+        <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+        <% end %>
       </div>
-      <div class="s-text-container">
-        <span>Adresse du Pokémon: </span><%= @pokemon.address %> <br>
-        <span>Prix du Pokémon: </span><%= @pokemon.price %><span>€</span>
+      <div class="s-infos-container">
+        <div style="width: 400px; height: 300px; border-radius: 20px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+        <div class="s-text-container">
+          <span>Adresse du Pokémon: </span><%= @pokemon.address %> <br>
+          <span>Prix du Pokémon: </span><%= @pokemon.price %><span>€</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="s-button-container">
-      <% if current_user == @pokemon.user %>
-        <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon), class:"s-button valid" %>
-        <%= link_to "Retirer votre annonce", pokemon_path(@pokemon),class:"s-button refuse",
-      data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de l'annonce #{@pokemon.name}?"} %>
-      <% else %>
-        <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon),class:"s-button"%>
-      <% end %>
-      <%= link_to "Retour", root_path, class:"s-button back"%>
+    <div class="s-button-container">
+        <% if current_user == @pokemon.user %>
+          <%= link_to "Editer votre annonce", edit_pokemon_path(@pokemon), class:"s-button valid" %>
+          <%= link_to "Retirer votre annonce", pokemon_path(@pokemon),class:"s-button refuse",
+        data: {turbo_method: :delete, turbo_confirm: "Confirmer la suppression de l'annonce #{@pokemon.name}?"} %>
+        <% else %>
+          <%= link_to "Réserver ce Pokémon", new_pokemon_booking_path(@pokemon),class:"s-button valid"%>
+        <% end %>
+    </div>
   </div>
 </div>
 

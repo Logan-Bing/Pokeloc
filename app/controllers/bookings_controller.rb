@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking.status = true
     @pokemon = @booking.pokemon
     if @booking.save
-      redirect_to pokemon_booking_path(@pokemon, @booking)
+      redirect_to my_bookings_path
    else
      render :new, status: :unprocessable_entity
    end
@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
     @booking.status = false
     @pokemon = @booking.pokemon
     if @booking.save
-      redirect_to pokemon_booking_path(@pokemon, @booking)
+      redirect_to my_bookings_path
    else
      render :new, status: :unprocessable_entity
    end

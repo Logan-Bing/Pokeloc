@@ -1,4 +1,3 @@
-
 <%= render "pages/shared/navbar" %>
 
 <div class="b-title-container">
@@ -149,6 +148,7 @@
    <div class="container text-align-center">
         <div class="parent-container">
           <% @bookings.each do |booking| %>
+          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
           <% if booking.user_id == current_user.id %>
                 <div class="card-product">
                   <%= cl_image_tag booking.pokemon.photo.key %>
@@ -158,6 +158,7 @@
                   </div>
                 </div>
                 <% else %>
+                <% end %>
                 <% end %>
             <% end %>
         </div>
