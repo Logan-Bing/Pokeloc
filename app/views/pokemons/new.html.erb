@@ -9,7 +9,7 @@
     <%= simple_form_for(@pokemon)do |f| %>
       <%= f.input :name, label: "Nom du Pokémon",input_html: { class:"p-input" }%>
       <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
-      <%= f.input :price, label: "Prix par jour", input_html: { class:"p-input" } %>
+      <%= f.input :price, label: "Prix par jour", input_html: { class:"p-input", min: 0 } %>
       <%= f.input :photo, as: :file%>
       <%= f.submit "Enregistrer mon annonce Pokémon",  class:"p-submit"%>
     <% end %>

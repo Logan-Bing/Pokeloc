@@ -11,7 +11,7 @@
     <%= simple_form_for(@pokemon) do |f| %>
       <%= f.input :name, label: "Nom", input_html: { class:"p-input" }%>
       <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
-      <%= f.input :price, label: "Prix", input_html: { class:"p-input" } %>
+      <%= f.input :price, label: "Prix", input_html: { class:"p-input",min: 0} %>
       <%= f.input :photo %>
       <%= f.submit "Valider les modifications",  class:"p-submit"%>
     <% end %>
