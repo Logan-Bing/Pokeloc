@@ -1,70 +1,156 @@
+<<<<<<< HEAD
 <%= render "pages/shared/navbar" %>
 
 <h1>my bookings view page</h1>
+=======
+>>>>>>> bab788c6b65dbfe961072e863c964d0bbde5201b
 
-  <div class="parent-container">
-      <div class="container text-align-center">
-        <p>Vos demandes de réservations à valider</p>
-        <div class="parent-container">
-          <% @bookings.each do |booking| %>
-          <% if booking.pokemon.user_id == current_user.id && booking.status == nil %>
-              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-                <div class="card-product">
-                  <%= cl_image_tag booking.pokemon.photo.key %>
-                  <div class="card-product-infos">
-                    <h2><%= booking.pokemon.name %></h2>
-                    <p>Product description with <strong>relevant info</strong> only.</p>
-                  </div>
-                </div>
-                <% end %>
-                <% else %>
-                <% end %>
-            <% end %>
-        </div>
+<%= render "pages/shared/navbar" %>
+
+<div class="b-parent-container">
+  <div class="b-title-container">
+    <div class="back-container">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", root_path, class:"b-back" %>
+    </div>
+    <h1>Mes réservations</h1>
+  </div>
+
+  <div class="all-status">
+    <div class="b-status-container" id="progress">
+
+      <div class="b-text-container" id="progress-text">
+        <p>Réservations en attente de validation</p>
       </div>
 
-      <div class="container text-align-center">
-        <p>Vos demandes de réservations validées</p>
-        <div class="parent-container">
-          <% @bookings.each do |booking| %>
-          <% if booking.pokemon.user_id == current_user.id && booking.status == true %>
-              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-                <div class="card-product">
-                  <%= cl_image_tag booking.pokemon.photo.key %>
-                  <div class="card-product-infos">
-                    <h2><%= booking.pokemon.name %></h2>
-                    <p>Product description with <strong>relevant info</strong> only.</p>
-                  </div>
-                </div>
-                <% end %>
-                <% else %>
-                <% end %>
-            <% end %>
+      <div class="booking-container">
+        <% @bookings.each do |booking| %>
+        <% if booking.pokemon.user_id == current_user.id && booking.status == nil %>
+          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+        <div class="b-booking">
+          <div class="b-img-container">
+            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+          </div>
+
+          <div class="b-infos-container">
+            <div class="b-name-container">
+              <span class="signet">Nom</span>
+              <p><%= booking.pokemon.name %></p>
+            </div>
+            <div class="b-price-container">
+              <span class="signet">Prix</span>
+              <p><%= booking.pokemon.price %></p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Début</span>
+              <p>06/04/2025</p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Fin</span>
+              <p>06/04/2025</p>
+            </div>
+          </div>
         </div>
+          <% end %>
+          <% end %>
+          <% end %>
       </div>
 
-      <div class="container text-align-center">
-        <p>Vos demandes de réservations refusées</p>
-        <div class="parent-container">
-          <% @bookings.each do |booking| %>
-          <% if booking.pokemon.user_id == current_user.id && booking.status == false %>
-              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-                <div class="card-product">
-                  <%= cl_image_tag booking.pokemon.photo.key %>
-                  <div class="card-product-infos">
-                    <h2><%= booking.pokemon.name %></h2>
-                    <p>Product description with <strong>relevant info</strong> only.</p>
-                  </div>
-                </div>
-                <% end %>
-                <% else %>
-                <% end %>
-            <% end %>
-        </div>
+    </div>
+
+    <div class="b-status-container">
+
+      <div class="b-text-container">
+        <p>Réservations Validé</p>
       </div>
+
+      <div class="booking-container">
+        <% @bookings.each do |booking| %>
+        <% if booking.pokemon.user_id == current_user.id && booking.status == true %>
+          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+        <div class="b-booking">
+          <div class="b-img-container">
+            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+          </div>
+
+          <div class="b-infos-container">
+            <div class="b-name-container">
+              <span class="signet">Nom</span>
+              <p><%= booking.pokemon.name %></p>
+            </div>
+            <div class="b-price-container">
+              <span class="signet">Prix</span>
+              <p><%= booking.pokemon.price %></p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Début</span>
+              <p>06/04/2025</p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Fin</span>
+              <p>06/04/2025</p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="b-status-container" id="refuse">
+
+      <div class="b-text-container" id="refuse-text">
+        <p>Réservations Refusé</p>
+      </div>
+
+      <div class="booking-container">
+        <% @bookings.each do |booking| %>
+        <% if booking.pokemon.user_id == current_user.id && booking.status == false %>
+        <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+        <div class="b-booking">
+          <div class="b-img-container">
+            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+          </div>
+
+          <div class="b-infos-container">
+            <div class="b-name-container">
+              <span class="signet">Nom</span>
+              <p><%= booking.pokemon.name %></p>
+            </div>
+            <div class="b-price-container">
+              <span class="signet">Prix</span>
+              <p><%= booking.pokemon.price %></p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Début</span>
+              <p>06/04/2025</p>
+            </div>
+            <div class="b-date-container">
+              <span class="signet">Fin</span>
+              <p>06/04/2025</p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "pages/shared/footer" %>
+
+
+
+
+
+
 
    <div class="container text-align-center">
-        <p>Vos demandes de réservations</p>
         <div class="parent-container">
           <% @bookings.each do |booking| %>
           <% if booking.user_id == current_user.id %>
@@ -80,8 +166,4 @@
             <% end %>
         </div>
       </div>
-      </div>
-
-<%= link_to "Retour", root_path %>
-
-<%= render "pages/shared/footer" %>
+    </div>
