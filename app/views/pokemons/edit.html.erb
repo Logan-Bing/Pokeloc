@@ -1,3 +1,5 @@
+<%= render "pages/shared/navbar" %>
+
 <div class="p-parent-container">
   <div class="p-left-container">
     <div class="p-text-container">
@@ -14,7 +16,7 @@
       <%= f.submit "Valider les modifications",  class:"p-submit"%>
     <% end %>
     <div class="p-container-back">
-      <%= link_to "Retour", root_path, class: 'p-back' %>
+      <%= link_to "Retour", pokemon_path(@pokemon), class: 'p-back' %>
     </div>
   </div>
 </div>

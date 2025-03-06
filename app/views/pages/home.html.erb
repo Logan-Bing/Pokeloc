@@ -8,12 +8,26 @@
         <h1>PokeLoc</h1>
         <p>Louez votre Pokémon !</p>
       </div>
+<<<<<<< HEAD
+      <div class="row justify-content-center">
+        <div class="col-sm-8 my-3">
+          <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Pikachu..."
+              %>
+            <%= submit_tag "Rechercher", name: "", class: "btn form-submit" %>
+          <% end %>
+        </div>
+=======
       <div class="form-container">
         <form class="flex-form" action="/search">
           <label for="from">Pokemon</label>
           <input type="search" placeholder="Ex : Pikachu...">
           <input type="submit" value="Recherche">
         </form>
+>>>>>>> bab788c6b65dbfe961072e863c964d0bbde5201b
       </div>
       <div class="img-container">
         <img class="sacha" src="https://resize-gulli.jnsmedia.fr/r/890,__ym__/img//var/jeunesse/storage/images/canalj2020/heros/pokemon-saison-23-les-voyages/les-personnages/sasha/28757156-1-fre-FR/Sasha.png" alt="">
@@ -29,23 +43,27 @@
   </div>
 
 <div class="parent-container">
-  <% @pokemons.each do |pokemon| %>
-    <%= link_to pokemon_path(pokemon), class: "link" do %>
-      <div class="main-container">
-        <div>
-        <% if pokemon.photo.attached? %>
-          <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
-          <% else %>
-          <img src="<%= cl_image_path('uyjoltp7lbylvxlwfoon') %>" alt="">
-          <% end %>
-        </div>
-        <div class="info-container">
-          <h2><strong><%= pokemon.name.capitalize %></strong></h2>
-          <h3><%= pokemon.address.capitalize %></h3>
-          <p><%= pokemon.price %> € / jour</p>
-        </div>
-      </div>
-    <% end %>
+  <% if @pokemons.any? %>
+      <% @pokemons.each do |pokemon| %>
+        <%= link_to pokemon_path(pokemon), class: "link" do %>
+          <div class="main-container">
+            <div>
+            <% if pokemon.photo.attached? %>
+              <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, class: "pokemon-img" %>
+              <% else %>
+              <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="" class="pokemon-img">
+              <% end %>
+            </div>
+            <div class="info-container">
+              <h2><strong><%= pokemon.name.capitalize %></strong></h2>
+              <h6><%= pokemon.address %></h6>
+              <p><%= pokemon.price %> € / jour</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  <% else %>
+    <em>Aucun résultat pour cette recherche</em>
   <% end %>
 </div>
 

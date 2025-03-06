@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
-  get "/search", to: "pokemons#search"
   get "/my_pokemons", to: "pokemons#my_pokemons", as: :my_pokemons
   get "/my_bookings", to: "bookings#my_bookings", as: :my_bookings
 
