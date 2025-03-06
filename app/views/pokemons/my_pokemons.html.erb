@@ -1,24 +1,25 @@
-<% if @my_pokemons.length == 0 %>
-  <p>Vous n'avez pas d'annonces publiées</p>
-<% else %>
-  <div class="container text-align-center">
-    <p>Vos annonces publiées</p>
+<div class="container">
+  <% if @my_pokemons.length == 0 %>
+    <h1>Vous n'avez pas d'annonces publiées</h1>
+  <% else %>
+    <h1>Vos annonces publiées</h1>
     <div class="parent-container">
       <% @my_pokemons.each do |pokemon| %>
           <%= link_to pokemon_path(pokemon), class: "link" do %>
-            <div class="card-product">
+            <div class="card-product" id="my-pokemons-card">
               <%= cl_image_tag pokemon.photo.key %>
               <div class="card-product-infos">
                 <h2><%= pokemon.name %></h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
+                <p><%= pokemon.price %>€ / jour</p>
               </div>
             </div>
         <% end %>
         <% end %>
     </div>
+        <div class="p-container-back">
+      <%= link_to "Retour", root_path, class: 'p-back' %>
+    </div>
   </div>
 <% end %>
-
-<%= link_to "Retour", root_path %>
 
 <%= render "pages/shared/footer" %>
