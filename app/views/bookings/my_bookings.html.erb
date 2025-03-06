@@ -17,6 +17,7 @@
 
       <div class="b-text-container" id="progress-text">
         <p>Réservations en attente de validation</p>
+        <%= image_tag "vector.png", class:"vector" %>
       </div>
 
       <div class="booking-container">
@@ -59,8 +60,12 @@
       <div class="b-text-container">
         <p>Réservations Validé</p>
       </div>
+      <div data-controller ="toggle" >
+        <button class="btn-toggle" data-action="click->toggle#fire">
+          <%= image_tag "vector.png", class:"vector" %>
+        </button>
 
-      <div class="booking-container">
+      <div class="booking-container" id="valid-container"  data-toggle-target="button" >
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == true %>
           <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
@@ -92,13 +97,14 @@
         <% end %>
         <% end %>
       </div>
-
+     </div>
     </div>
 
     <div class="b-status-container" id="refuse">
 
       <div class="b-text-container" id="refuse-text">
         <p>Réservations Refusé</p>
+        <%= image_tag "vector.png", class:"vector" %>
       </div>
 
       <div class="booking-container">

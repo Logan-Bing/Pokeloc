@@ -33,21 +33,28 @@
   color: #1F1F1F;
 }
 
+.vector{
+  width: 15px;
+}
 
 
 .b-text-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: left;
   width: 800px;
   background-color: rgba(73, 253, 70, 0.5);
   border-radius: 15px;
   height: 60px;
+  padding: 15px;
 }
 
 .b-text-container p {
   color: #606060;
   font-family: 'Montserrat';
   font-weight: bold;
-  padding: 15px;
+  margin: 0;
 }
 
 #progress{
@@ -98,6 +105,9 @@
 
 .booking-container{
   margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .b-booking{
@@ -113,3 +123,7 @@
   font-size: 12px;
   opacity: 0.4;
 }
+
+// #valid-container{
+//   display: none;
+// }
