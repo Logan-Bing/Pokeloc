@@ -1,0 +1,38 @@
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.nav-item {
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-right: 10px;
+  color: white;
+}
+
+.nav-link {
+  font-size: small;
+  background-color: #FFDE00;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}

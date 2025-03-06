@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   width: 1000px;
-  height: 600px;
+  height: 700px;
   gap: 50px;
   padding: 50px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -16,8 +16,9 @@
   margin-top: 20px;
 }
 
-.s-img{
+.s-img-container {
   width: 300px;
+  border-radius: 50%;
 }
 
 .s-parent-container{

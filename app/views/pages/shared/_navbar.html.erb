@@ -11,13 +11,12 @@
           <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <div class="nav-btn">
-              <%= link_to "Mes annonces", my_pokemons_path , class: "nav-link text-white" %>
               <%= link_to "Mettre un Pokémon à louer", "/pokemons/new", class: "nav-link text-white" %>
             </div>
               <li class="nav-item dropdown">
-                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://i.pinimg.com/736x/50/36/5b/50365b786c958786d48fe409a080d382.jpg" />
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.suruga-ya.com/database/pics_webp/game/878032422.jpg.webp" />
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <%= link_to "Messages", "#", class: "dropdown-item" %>
+                    <%= link_to "Gérer mes annonces", "/my_pokemons", class: "dropdown-item" %>
                     <%= link_to "Mes réservations", "/my_bookings", class: "dropdown-item" %>
                     <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
                   </div>
