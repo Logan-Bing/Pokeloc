@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get "/search", to: "pokemons#search"
+  get "/my_pokemons", to: "pokemons#my_pokemons", as: :my_pokemons
+  get "/my_bookings", to: "bookings#my_bookings", as: :my_bookings
 
   patch "accept/:id", to: "bookings#accept", as: :accept
   patch "refuse/:id", to: "bookings#decline", as: :decline

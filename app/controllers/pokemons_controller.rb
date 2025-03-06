@@ -57,13 +57,20 @@ class PokemonsController < ApplicationController
   def search
     @pokemons = Pokemon.all
     tmp = []
-    if params[:search].downcase
+    if params[:search]
       @pokemons.each do |pokemon|
-        if pokemon.name.downcase.match?(params[:search])
+        if pokemon.name.match?(params[:search])
           tmp.push(pokemon)
         end
       end
       @pokemons = tmp
+    end
+  end
+
+  def my_pokemons
+    @pokemons = Pokemon.all
+    @my_pokemons = @pokemons.select do |pokemon|
+      pokemon.user_id == current_user.id
     end
   end
 

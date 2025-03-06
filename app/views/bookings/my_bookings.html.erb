@@ -1,0 +1,45 @@
+<h1>my bookings view page</h1>
+
+  <div class="parent-container">
+      <div class="container text-align-center">
+        <p>Vos demandes de réservations à valider</p>
+        <div class="parent-container">
+          <% @bookings.each do |booking| %>
+          <% if booking.pokemon.user_id == current_user.id %>
+              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+                <div class="card-product">
+                  <%= cl_image_tag booking.pokemon.photo.key %>
+                  <div class="card-product-infos">
+                    <h2><%= booking.pokemon.name %></h2>
+                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  </div>
+                </div>
+                <% end %>
+                <% else %>
+                <% end %>
+            <% end %>
+        </div>
+      </div>
+
+   <div class="container text-align-center">
+        <p>Vos demandes de réservations</p>
+        <div class="parent-container">
+          <% @bookings.each do |booking| %>
+          <% if booking.user_id == current_user.id %>
+                <div class="card-product">
+                  <%= cl_image_tag booking.pokemon.photo.key %>
+                  <div class="card-product-infos">
+                    <h2><%= booking.pokemon.name %></h2>
+                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  </div>
+                </div>
+                <% else %>
+                <% end %>
+            <% end %>
+        </div>
+      </div>
+      </div>
+
+<%= link_to "Retour", root_path %>
+
+<%= render "pages/shared/footer" %>

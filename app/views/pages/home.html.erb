@@ -9,7 +9,7 @@
         <p>Louez votre Pokémon !</p>
       </div>
       <div class="form-container">
-        <form class="flex-form" action="/">
+        <form class="flex-form" action="/search">
           <label for="from">Pokemon</label>
           <input type="search" placeholder="Ex : Pikachu...">
           <input type="submit" value="Recherche">
@@ -33,12 +33,14 @@
     <%= link_to pokemon_path(pokemon), class: "link" do %>
       <div class="main-container">
         <div>
-          <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
+          <% if pokemon.photo.attached?%>
+            <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
+          <% end %>
         </div>
         <div class="info-container">
           <h2><%= pokemon.name %></h2>
           <h2><%= pokemon.address %></h2>
-          <h2><%= pokemon.price %></h2>
+          <h2><%= pokemon.price %> €</h2>
         </div>
       </div>
     <% end %>
