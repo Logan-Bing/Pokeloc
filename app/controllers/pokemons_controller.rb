@@ -46,7 +46,8 @@ class PokemonsController < ApplicationController
 
   def destroy
     @pokemon.destroy
-    redirect_to pokemons_path, status: :see_other
+    redirect_to root_path, status: :see_other
+
   end
 
   def search
