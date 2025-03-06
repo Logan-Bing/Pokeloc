@@ -6,16 +6,13 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @bookings = Booking.all
-
     @pokemons = Pokemon.all
-    # The `geocoded` scope filters only flats with coordinates
     @markers = @pokemons.geocoded.map do |pokemon|
       if pokemon.id == @pokemon.id
       {
         lat: pokemon.latitude,
         lng: pokemon.longitude
-        # info_window_html: render_to_string(partial: "info_window", locals: {pokemon: @pokemon })
+        # info_window_html: render_to_string(partial: "app/views/pages/info_window", locals: { pokemon: pokemon })
       }
     end
     end

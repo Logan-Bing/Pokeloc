@@ -4,47 +4,10 @@
 
 body {
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
-}
-
-.navbar-nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.nav-item {
-  align-items: center;
-}
-
-.nav-btn {
-  padding: 2px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-right: 10px;
-  color: white;
-}
-
-.nav-link {
-  font-size: small;
-  background-color: #FFDE00;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: #ffffff;
 }
 
 .sacha {
@@ -53,7 +16,7 @@ body {
 
 .banner {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
   justify-content: center;
   background-size:cover;
   background-position: center;
@@ -79,6 +42,7 @@ body {
 
 .text-container{
   margin: 0px 0px 50px 0px;
+  width: 100%;
 }
 
 .cover  {
@@ -100,10 +64,17 @@ body {
 
 .parent-container{
   margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+.b-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
 }
 
 .pokemon-img{
@@ -129,7 +100,8 @@ body {
   padding: 15px;
 }
 
-.info-container h2{
+.info-container h4 {
+  font-family: "Press Start 2P", system-ui;
   padding-top: 10px;
 }
 

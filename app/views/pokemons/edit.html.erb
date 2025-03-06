@@ -1,22 +1,30 @@
 <%= render "pages/shared/navbar" %>
 
 <div class="p-parent-container">
-  <div class="p-left-container">
+ <div class="p-left-container">
+  <div class="p-form-container">
+    <div class="back-container">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", root_path, class:"b-back" %>
+    </div>
     <div class="p-text-container">
       <h1 id="p-title" >Editer votre annonce Pokemon</h1>
     </div>
-  </div>
+    <div class="p-info-container">
+      <div class="p-image">
+        <img src="https://i.pinimg.com/736x/d2/c0/a8/d2c0a8c4b24cedfa9a19cca2900aae47.jpg" alt="">
+      </div>
 
-  <div class="p-form-container">
-    <%= simple_form_for(@pokemon) do |f| %>
-      <%= f.input :name, label: "Nom", input_html: { class:"p-input" }%>
-      <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
-      <%= f.input :price, label: "Prix", input_html: { class:"p-input",min: 0} %>
-      <%= f.input :photo %>
-      <%= f.submit "Valider les modifications",  class:"p-submit"%>
-    <% end %>
-    <div class="p-container-back">
-      <%= link_to "Retour", pokemon_path(@pokemon), class: 'p-back' %>
+      <div class="p-form">
+        <%= simple_form_for(@pokemon) do |f| %>
+          <%= f.input :name, label: "Nom", input_html: { class:"p-input" }%>
+          <%= f.input :address, label: "Adresse", input_html: { class:"p-input" } %>
+          <%= f.input :price, label: "Prix", input_html: { class:"p-input", min: 0 } %>
+          <%= f.input :photo %>
+          <%= f.submit "Valider les modifications",  class:"p-submit"%>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

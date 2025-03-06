@@ -1,13 +1,16 @@
 <%= render "pages/shared/navbar" %>
 
-<div class="b-parent-container">
-  <div class="b-title-container">
+<div class="b-title-container">
     <div class="back-container">
       <i class="fa-solid fa-arrow-left b-icon"></i>
       <%= link_to "Retour", root_path, class:"b-back" %>
     </div>
+    <br>
     <h1>Mes réservations</h1>
   </div>
+
+
+<div class="b-parent-container">
 
   <div class="all-status">
     <div class="b-status-container" id="progress">
@@ -146,6 +149,7 @@
    <div class="container text-align-center">
         <div class="parent-container">
           <% @bookings.each do |booking| %>
+          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
           <% if booking.user_id == current_user.id %>
                 <div class="card-product">
                   <%= cl_image_tag booking.pokemon.photo.key %>
@@ -155,6 +159,7 @@
                   </div>
                 </div>
                 <% else %>
+                <% end %>
                 <% end %>
             <% end %>
         </div>
