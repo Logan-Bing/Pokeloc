@@ -1,3 +1,5 @@
+<%= render "pages/shared/navbar" %>
+
 <div class="container">
   <% if @my_pokemons.length == 0 %>
     <h1>Vous n'avez pas d'annonces publiées</h1>
@@ -7,7 +9,11 @@
       <% @my_pokemons.each do |pokemon| %>
           <%= link_to pokemon_path(pokemon), class: "link" do %>
             <div class="card-product" id="my-pokemons-card">
-              <%= cl_image_tag pokemon.photo.key %>
+              <% if pokemon.photo.attached? %>
+                <%= cl_image_tag pokemon.photo.key %>
+              <% else %>
+                <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+                <% end %>
               <div class="card-product-infos">
                 <h2><%= pokemon.name %></h2>
                 <p><%= pokemon.price %>€ / jour</p>
@@ -15,9 +21,6 @@
             </div>
         <% end %>
         <% end %>
-    </div>
-        <div class="p-container-back">
-      <%= link_to "Retour", root_path, class: 'p-back' %>
     </div>
   </div>
 <% end %>

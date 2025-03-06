@@ -5,10 +5,6 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
   end
 
-  def home
-    @pokemons = Pokemon.all
-  end
-
   def show
     @bookings = Booking.all
 

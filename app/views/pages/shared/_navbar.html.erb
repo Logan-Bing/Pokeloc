@@ -1,7 +1,7 @@
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
       <div class="container-fluid">
         <%= link_to "/", class: "navbar-brand" do %>
-        <%= cl_image_tag ('anfwusuyah5njujbha3i') %>
+        <img class="avatar dropdown-toggle" src="https://thumbs.dreamstime.com/b/signe-d-isolement-de-boule-vecteur-symbole-pokeball-ic%C3%B4ne-populaire-concept-jeu-pokemon-web-appli-ligne-bille-balle-l-%C3%A9quipe-187435285.jpg" />
         <% end %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -15,8 +15,8 @@
               <%= link_to "Mettre un Pokémon à louer", "/pokemons/new", class: "nav-link text-white" %>
             </div>
               <li class="nav-item dropdown">
-                <%= cl_image_tag ('jizjqyvdasyyuzisqduu'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://i.pinimg.com/736x/50/36/5b/50365b786c958786d48fe409a080d382.jpg" />
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <%= link_to "Messages", "#", class: "dropdown-item" %>
                     <%= link_to "Mes réservations", "/my_bookings", class: "dropdown-item" %>
                     <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
