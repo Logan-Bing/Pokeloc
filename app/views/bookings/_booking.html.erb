@@ -1,38 +1,49 @@
 <div>
-<% if booking.status == nil %>
-<h1> Votre demande de réservation est en attente de confirmation</h1>
-<% elsif booking.status == true %>
-<h1> Votre demande de réservation est confirmée !</h1>
-<% else %>
-<h1> Votre demande de réservation a été refusée par le dresseur de Pokémon</h1>
-<% end %>
 <br>
-  <p>
-    <strong> Votre prénom:</strong>
-    <%= booking.user.first_name %>
-  </p>
-
-   <p>
-    <strong> Votre nom de famille:</strong>
-    <%= booking.user.last_name %>
-  </p>
-
-  <p>
-    <strong> Nom du Pokémon:</strong>
-    <%= booking.pokemon.name %>
-  </p>
-<br>
-  <div>
-  <h5><strong>Vos dates de location:</strong></h5>
-  <p>
-    <strong>Du:</strong>
-    <%= booking.start_date %>
-  </p>
-
-  <p>
-    <strong>Au:</strong>
-    <%= booking.end_date %>
-  </p>
+   <div class="statement">
+    <% if booking.status == nil %>
+    <h1 class="title"> Votre demande de réservation est en attente de confirmation</h1>
+    <% elsif booking.status == true %>
+    <h1 class="title"> Votre demande de réservation est confirmée !</h1>
+    <% else %>
+    <h1 class="title"> Votre demande de réservation a été refusée par le dresseur de Pokémon</h1>
+    <% end %>
   </div>
+    <div class="infos-container">
 
+      <div class="info-container">
+        <div class="infos">
+          <p class="text">
+            <strong> Votre prénom:</strong>
+            <%= booking.user.first_name %>
+          </p>
+
+          <p class="text">
+            <strong> Votre nom de famille:</strong>
+            <%= booking.user.last_name %>
+          </p>
+
+          <p class="text">
+            <strong> Nom du Pokémon:</strong>
+            <%= booking.pokemon.name %>
+          </p>
+          <br>
+          <br>
+          <h5><strong>Vos dates de location:</strong></h5>
+          <p class="text">
+            <strong>Du:</strong>
+            <%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %>
+          </p>
+          <p class="text">
+            <strong>Au:</strong>
+            <%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %>
+          </p>
+        </div>
+      </div>
+      <div class="img">
+        <div id="img-secretary">
+
+        </div>
+      </div>
+    </div>
 </div>
