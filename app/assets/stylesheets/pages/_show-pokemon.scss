@@ -22,7 +22,7 @@
 .s-parent-container{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:start ;
   gap: 50px;
 }
 
@@ -49,4 +49,11 @@
 
 .back{
   color: black;
+}
+
+.s-title-container h1 {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
 }

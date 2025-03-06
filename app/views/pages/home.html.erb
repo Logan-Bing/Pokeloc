@@ -36,12 +36,13 @@
         <% if pokemon.photo.attached? %>
           <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill, id: "pokemon-img" %>
           <% else %>
+          <img src="<%= cl_image_path('uyjoltp7lbylvxlwfoon') %>" alt="">
           <% end %>
         </div>
         <div class="info-container">
-          <h2><%= pokemon.name %></h2>
-          <h2><%= pokemon.address %></h2>
-          <h2><%= pokemon.price %> €</h2>
+          <h2><strong><%= pokemon.name.capitalize %></strong></h2>
+          <h3><%= pokemon.address.capitalize %></h3>
+          <p><%= pokemon.price %> € / jour</p>
         </div>
       </div>
     <% end %>

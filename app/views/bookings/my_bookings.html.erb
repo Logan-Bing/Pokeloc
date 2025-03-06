@@ -5,7 +5,47 @@
         <p>Vos demandes de réservations à valider</p>
         <div class="parent-container">
           <% @bookings.each do |booking| %>
-          <% if booking.pokemon.user_id == current_user.id %>
+          <% if booking.pokemon.user_id == current_user.id && booking.status == nil %>
+              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+                <div class="card-product">
+                  <%= cl_image_tag booking.pokemon.photo.key %>
+                  <div class="card-product-infos">
+                    <h2><%= booking.pokemon.name %></h2>
+                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  </div>
+                </div>
+                <% end %>
+                <% else %>
+                <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="container text-align-center">
+        <p>Vos demandes de réservations validées</p>
+        <div class="parent-container">
+          <% @bookings.each do |booking| %>
+          <% if booking.pokemon.user_id == current_user.id && booking.status == true %>
+              <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+                <div class="card-product">
+                  <%= cl_image_tag booking.pokemon.photo.key %>
+                  <div class="card-product-infos">
+                    <h2><%= booking.pokemon.name %></h2>
+                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  </div>
+                </div>
+                <% end %>
+                <% else %>
+                <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="container text-align-center">
+        <p>Vos demandes de réservations refusées</p>
+        <div class="parent-container">
+          <% @bookings.each do |booking| %>
+          <% if booking.pokemon.user_id == current_user.id && booking.status == false %>
               <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                 <div class="card-product">
                   <%= cl_image_tag booking.pokemon.photo.key %>
