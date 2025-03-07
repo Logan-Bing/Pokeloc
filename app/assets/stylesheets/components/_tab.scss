@@ -4,6 +4,8 @@
 }
 
 .tabs .tab-registers {
+  margin: 0 auto;
+  width: 600px;
   display: flex;
   background-color: RGB(255, 255, 255);
 }
@@ -22,12 +24,15 @@
 
 .tabs .tab-bodies {
   padding: 0.5em;
-  background-color: RGB(235, 235, 235);
+  background-color: white;
   flex-grow: 1;
   overflow-y: auto;
 }
 
 .tabs button.active-tab {
-  background-color: rgb(235, 235, 235);
+  opacity: 1;
 }
 
+.tabs button.inactive-tab {
+  opacity: 0.2;
+}
