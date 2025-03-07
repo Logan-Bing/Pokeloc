@@ -1,6 +1,15 @@
-<div>
+<div class="container">
 <br>
-   <div class="statement">
+
+
+<div class="sb-title-container">
+    <div class="back-container">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", root_path, class:"b-back" %>
+    </div>
+</div>
+
+  <div class="sb-title">
     <% if booking.status == nil %>
     <h1 class="title"> Votre demande de réservation est en attente de confirmation</h1>
     <% elsif booking.status == true %>
@@ -9,41 +18,55 @@
     <h1 class="title"> Votre demande de réservation a été refusée par le dresseur de Pokémon</h1>
     <% end %>
   </div>
-    <div class="infos-container">
 
-      <div class="info-container">
-        <div class="infos">
-          <p class="text">
-            <strong> Votre prénom:</strong>
-            <%= booking.user.first_name %>
-          </p>
+<div class="sb-parent-container">
+  <div class="sb-main-container">
+    <div class="sb-text-container">
+      <p>Explorez toutes les informations fournies concernant la demande de réservation</p>
+    </div>
 
-          <p class="text">
-            <strong> Votre nom de famille:</strong>
-            <%= booking.user.last_name %>
-          </p>
 
-          <p class="text">
-            <strong> Nom du Pokémon:</strong>
-            <%= booking.pokemon.name %>
-          </p>
-          <br>
-          <br>
-          <h5><strong>Vos dates de location:</strong></h5>
-          <p class="text">
-            <strong>Du:</strong>
-            <%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %>
-          </p>
-          <p class="text">
-            <strong>Au:</strong>
-            <%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %>
-          </p>
+    <div class="sb-main-content">
+      <div class="sb-left-container">
+        <div class="sb-infos-container">
+          <div class="bs-name-container">
+            <span class="signet">Prénom</span>
+            <p><%= @booking.user.first_name %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">Nom</span>
+            <p><%= @booking.user.last_name %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">De</span>
+            <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">à</span>
+            <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
+          </div>
         </div>
       </div>
-      <div class="img">
-        <div id="img-secretary">
 
+
+      <div class="sb-pokemon-card">
+        <div class="sb-container">
+          <div class="sb-img-container">
+          <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+          </div>
+          <div class="sb-pokemon-infos">
+            <div class="sb-name-container">
+              <span class="signet">Nom</span>
+              <p><%= @booking.pokemon.name %></p>
+            </div>
+            <div class="sb-name-container">
+              <span class="signet">Prix</span>
+              <p><%= @booking.pokemon.price %>€ / jour</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 </div>

@@ -1,70 +1,9 @@
 <%= render "pages/shared/navbar" %>
 
-<%= render "pages/shared/navbar" %>
-
-<div class="sb-title-container">
-    <div class="back-container">
-      <i class="fa-solid fa-arrow-left b-icon"></i>
-      <%= link_to "Retour", root_path, class:"b-back" %>
-    </div>
-    <h1><%= @booking.user.first_name %> veut réserver votre <%= @booking.pokemon.name %> !</h1>
-</div>
-
-<div class="sb-parent-container">
-
-  <div class="sb-main-container">
-    <div class="sb-text-container">
-      <p>Explorez toutes les informations fournies concernant la demande de réservation</p>
-    </div>
-
-
-    <div class="sb-main-content">
-      <div class="sb-left-container">
-        <div class="sb-infos-container">
-          <div class="bs-name-container">
-            <span class="signet">Prénom</span>
-            <p><%= @booking.user.first_name %></p>
-          </div>
-          <div class="sb-name-container">
-            <span class="signet">Nom</span>
-            <p><%= @booking.user.last_name %></p>
-          </div>
-          <div class="sb-name-container">
-            <span class="signet">De</span>
-            <p><%= @booking.start_date %></p>
-          </div>
-          <div class="sb-name-container">
-            <span class="signet">à</span>
-            <p><%= @booking.end_date %>/p>
-          </div>
-        </div>
-
-        <div class="sb-button-container">
-          <%= link_to "Accepter", accept_path, data: { turbo_method: :patch }%>
-          <%= link_to "Refuser", decline_path, data: { turbo_method: :patch }, class:"refuse" %>
-        </div>
-      </div>
-
-
-      <div class="sb-pokemon-card">
-        <div class="sb-container">
-          <div class="sb-img-container">
-          <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
-          </div>
-          <div class="sb-pokemon-infos">
-            <div class="sb-name-container">
-              <span class="signet">Nom</span>
-              <p><%= @booking.pokemon.name %></p>
-            </div>
-            <div class="sb-name-container">
-              <span class="signet">Prix</span>
-              <p><%= @booking.pokemon.price %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% if current_user == @booking.pokemon.user %>
+    <%= render "booking_review", booking: @booking %>
+  <% else %>
+    <%= render "booking", booking: @booking %>
+<% end %>
 
 <%= render "pages/shared/footer" %>

@@ -1,13 +1,13 @@
 <%= render "pages/shared/navbar" %>
 
 <div class="b-title-container">
-    <div class="back-container">
-      <i class="fa-solid fa-arrow-left b-icon"></i>
-      <%= link_to "Retour", root_path, class:"b-back" %>
-    </div>
-    <br>
-    <h1>Mes réservations</h1>
+  <div class="back-container">
+    <i class="fa-solid fa-arrow-left b-icon"></i>
+    <%= link_to "Retour", root_path, class:"b-back" %>
   </div>
+  <br>
+  <h1>Mes réservations</h1>
+</div>
 
 
 <div class="b-parent-container">
@@ -23,72 +23,73 @@
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == nil %>
           <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-        <div class="b-booking">
-          <div class="b-img-container">
-            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
-          </div>
 
-          <div class="b-infos-container">
-            <div class="b-name-container">
-              <span class="signet">Nom</span>
-              <p><%= booking.pokemon.name %></p>
+            <div class="b-booking">
+              <div class="b-img-container">
+                <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+              </div>
+
+              <div class="b-infos-container">
+                <div class="b-name-container">
+                  <span class="signet">Nom</span>
+                  <p><%= booking.pokemon.name %></p>
+                </div>
+                <div class="b-price-container">
+                  <span class="signet">Prix</span>
+                  <p><%= booking.pokemon.price %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Début</span>
+                  <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Fin</span>
+                  <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
+                </div>
+              </div>
             </div>
-            <div class="b-price-container">
-              <span class="signet">Prix</span>
-              <p><%= booking.pokemon.price %></p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Début</span>
-              <p>06/04/2025</p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Fin</span>
-              <p>06/04/2025</p>
-            </div>
-          </div>
-        </div>
-          <% end %>
+            <% end %>
           <% end %>
           <% end %>
       </div>
-
     </div>
 
     <div class="b-status-container">
 
       <div class="b-text-container">
-        <p>Réservations Validé</p>
+        <p>Réservations Validées</p>
       </div>
 
       <div class="booking-container">
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == true %>
           <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-        <div class="b-booking">
-          <div class="b-img-container">
-            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
-          </div>
 
-          <div class="b-infos-container">
-            <div class="b-name-container">
-              <span class="signet">Nom</span>
-              <p><%= booking.pokemon.name %></p>
+            <div class="b-booking">
+              <div class="b-img-container">
+                <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+              </div>
+
+              <div class="b-infos-container">
+                <div class="b-name-container">
+                  <span class="signet">Nom</span>
+                  <p><%= booking.pokemon.name %></p>
+                </div>
+                <div class="b-price-container">
+                  <span class="signet">Prix</span>
+                  <p><%= booking.pokemon.price %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Début</span>
+                  <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Fin</span>
+                  <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
+                </div>
+              </div>
             </div>
-            <div class="b-price-container">
-              <span class="signet">Prix</span>
-              <p><%= booking.pokemon.price %></p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Début</span>
-              <p>06/04/2025</p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Fin</span>
-              <p>06/04/2025</p>
-            </div>
-          </div>
-        </div>
-        <% end %>
+          <% end %>
         <% end %>
         <% end %>
       </div>
@@ -98,38 +99,39 @@
     <div class="b-status-container" id="refuse">
 
       <div class="b-text-container" id="refuse-text">
-        <p>Réservations Refusé</p>
+        <p>Réservations Refusées</p>
       </div>
 
       <div class="booking-container">
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == false %>
-        <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-        <div class="b-booking">
-          <div class="b-img-container">
-            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
-          </div>
+          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
 
-          <div class="b-infos-container">
-            <div class="b-name-container">
-              <span class="signet">Nom</span>
-              <p><%= booking.pokemon.name %></p>
+            <div class="b-booking">
+              <div class="b-img-container">
+                <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+              </div>
+
+              <div class="b-infos-container">
+                <div class="b-name-container">
+                  <span class="signet">Nom</span>
+                  <p><%= booking.pokemon.name %></p>
+                </div>
+                <div class="b-price-container">
+                  <span class="signet">Prix</span>
+                  <p><%= booking.pokemon.price %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Début</span>
+                  <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+                </div>
+                <div class="b-date-container">
+                  <span class="signet">Fin</span>
+                  <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
+                </div>
+              </div>
             </div>
-            <div class="b-price-container">
-              <span class="signet">Prix</span>
-              <p><%= booking.pokemon.price %></p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Début</span>
-              <p>06/04/2025</p>
-            </div>
-            <div class="b-date-container">
-              <span class="signet">Fin</span>
-              <p>06/04/2025</p>
-            </div>
-          </div>
-        </div>
-        <% end %>
+            <% end %>
         <% end %>
         <% end %>
       </div>
@@ -149,19 +151,34 @@
    <div class="container text-align-center">
         <div class="parent-container">
           <% @bookings.each do |booking| %>
-          <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
-          <% if booking.user_id == current_user.id %>
-                <div class="card-product">
-                  <%= cl_image_tag booking.pokemon.photo.key %>
-                  <div class="card-product-infos">
-                    <h2><%= booking.pokemon.name %></h2>
-                    <p>Product description with <strong>relevant info</strong> only.</p>
+            <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
+
+              <div class="b-booking">
+                <div class="b-img-container">
+                  <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+                </div>
+
+                <div class="b-infos-container">
+                  <div class="b-name-container">
+                    <span class="signet">Nom</span>
+                    <p><%= booking.pokemon.name %></p>
+                  </div>
+                  <div class="b-price-container">
+                    <span class="signet">Prix</span>
+                    <p><%= booking.pokemon.price %></p>
+                  </div>
+                  <div class="b-date-container">
+                    <span class="signet">Début</span>
+                    <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+                  </div>
+                  <div class="b-date-container">
+                    <span class="signet">Fin</span>
+                    <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
                   </div>
                 </div>
-                <% else %>
-                <% end %>
-                <% end %>
+              </div>
             <% end %>
+          <% end %>
         </div>
       </div>
     </div>
