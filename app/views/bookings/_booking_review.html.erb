@@ -38,8 +38,8 @@
         </div>
 
         <div class="sb-button-container">
-          <%= link_to "Accepter", accept_path, data: { turbo_method: :patch }, class: "button-accept"%>
-          <%= link_to "Refuser", decline_path, data: { turbo_method: :patch }, class: "refuse" %>
+          <%= link_to "Accepter", accept_path, data: { turbo_method: :patch }%>
+          <%= link_to "Refuser", decline_path, data: { turbo_method: :patch }, class:"refuse" %>
         </div>
       </div>
 
@@ -47,7 +47,11 @@
       <div class="sb-pokemon-card">
         <div class="sb-container">
           <div class="sb-img-container">
-          <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+          <% if @pokemon.photo.attached? %>
+             <%= cl_image_tag @pokemon.photo.key, class: "sb-img" %>
+          <% else %>
+            <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+          <% end %>
           </div>
           <div class="sb-pokemon-infos">
             <div class="sb-name-container">
@@ -56,7 +60,7 @@
             </div>
             <div class="sb-name-container">
               <span class="signet">Prix</span>
-              <p><%= @booking.pokemon.price %>€ / jour</p>
+              <p><%= @booking.pokemon.price %></p>
             </div>
           </div>
         </div>
