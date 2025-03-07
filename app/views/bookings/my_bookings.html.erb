@@ -31,7 +31,7 @@
                   <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                     <div class="b-booking">
                       <div class="b-img-container">
-                        <% if booking..photo.attached? %>
+                        <% if booking.pokemon.photo.attached? %>
                           <%= cl_image_tag booking.pokemon.photo.key, class: "sb-img" %>
                         <% else %>
                           <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
@@ -118,7 +118,7 @@
                   <div class="b-booking">
                     <div class="b-img-container">
                       <% if booking.pokemon.photo.attached? %>
-                        <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                        <%= cl_image_tag booking.pokemon.photo.key, class: "sb-img" %>
                       <% else %>
                         <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
                       <% end %>
@@ -160,7 +160,7 @@
                         <div class="b-booking">
                           <div class="b-img-container">
                             <% if booking.pokemon.photo.attached? %>
-                              <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                              <%= cl_image_tag booking.pokemon.photo.key, class: "sb-img" %>
                             <% else %>
                               <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
                             <% end %>
