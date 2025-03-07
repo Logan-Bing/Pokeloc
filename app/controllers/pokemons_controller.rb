@@ -11,10 +11,10 @@ class PokemonsController < ApplicationController
       if pokemon.id == @pokemon.id
       {
         lat: pokemon.latitude,
-        lng: pokemon.longitude
-        # info_window_html: render_to_string(partial: "app/views/pages/info_window", locals: { pokemon: pokemon })
+        lng: pokemon.longitude,
+        # info_window_html: render_to_string(partial: "pages/shared/info_window", locals: { pokemon: @pokemon })
       }
-    end
+      end
     end
   end
 
