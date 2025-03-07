@@ -1,5 +1,6 @@
 <%= render "pages/shared/navbar" %>
 
+
 <% if current_user == @booking.pokemon.user %>
     <%= render "booking_review", booking: @booking %>
   <% else %>
