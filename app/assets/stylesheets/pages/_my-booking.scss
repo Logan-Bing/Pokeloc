@@ -124,6 +124,15 @@
   opacity: 0.4;
 }
 
-// #valid-container{
-//   display: none;
-// }
+.btn-toggle{
+  background: none;
+  border: none;
+}
+
+.vector {
+  transition: transform 0.3s ease;
+}
+
+.rotate{
+  transform: rotate(-90deg);
+}
