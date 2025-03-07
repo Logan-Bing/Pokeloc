@@ -1,13 +1,11 @@
-// Specific CSS for your home-page
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap");
 
 body {
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .sacha {
@@ -22,21 +20,19 @@ body {
   background-position: center;
   padding: 40px 0;
   text-align: center;
-
   h1 {
     margin: 0;
-    color: #d73851;
+    color: #D73851;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 64px;
     font-weight: bold;
   }
-
   p {
     font-size: 20px;
-    color: #d73851;
+    color: #D73851;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-family: 'Press Start 2P';
+    font-family: "Press Start 2P";
   }
 }
 
@@ -79,19 +75,40 @@ body {
 
 .pokemon-img{
   width: 300px;
-  border-radius: 20px;
 }
 
 .main-container{
   display: flex;
   flex-direction: column;
   text-wrap: wrap;
-  box-shadow: 1px 1px 5px grey;
-  border-radius: 30px;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: white;
   width: 300px;
   height: 455px;
   justify-content: space-between;
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out,
+              background 0.3s ease-in-out;
+}
+
+.main-container:hover {
+  /* Dégradé évoquant un demi-cercle rouge sur le haut (Poké Ball)
+     et le blanc en bas */
+  background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+
+  /* On peut ajouter une bordure noire pour rappeler le cercle central */
+  border: 3px solid #000000;
+
+  /* Légère mise en avant au survol */
+  transform: scale(1.05);
+
+  /* Halo rouge rappelant la couleur principale de la Poké Ball */
+  box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.4);
+
+  cursor: pointer; /* curseur “main” au survol */
 }
 
 .info-container{
@@ -113,6 +130,7 @@ body {
 .form-submit {
   background-color: #FFDE00;
 }
- .form-control {
+
+.form-control {
   width: 300px;
- }
+}
