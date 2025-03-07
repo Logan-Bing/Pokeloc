@@ -12,6 +12,4 @@ export default class extends Controller {
 
     this.arrowTarget.classList.toggle("rotate")
   }
-
-
 }

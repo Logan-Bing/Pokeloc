@@ -1,40 +1,69 @@
-<div>
-<h1> Une demande de réservation vient d'arriver</h1>
-<br>
-  <p>
-    <strong> Prénom du client:</strong>
-    <%= booking.user.first_name %>
-  </p>
 
-   <p>
-    <strong> Nom du client:</strong>
-    <%= booking.user.last_name %>
-  </p>
+<div class="sb-title-container">
+    <div class="back-container">
+      <i class="fa-solid fa-arrow-left b-icon"></i>
+      <%= link_to "Retour", root_path, class:"b-back" %>
+    </div>
+    <h1><%= @booking.user.first_name %> veut réserver votre <%= @booking.pokemon.name %> !</h1>
+</div>
 
-  <p>
-    <strong> Nom du Pokémon:</strong>
-    <%= booking.pokemon.name %>
-  </p>
-<br>
-  <div>
-  <h5><strong>Les dates demandées:</strong></h5>
-  <p>
-    <strong>Du:</strong>
-    <%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %>
-  </p>
+<div class="sb-parent-container">
 
-  <p>
-    <strong>Au:</strong>
-    <%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %>
-  </p>
+  <div class="sb-main-container">
+    <div class="sb-text-container">
+      <p>Explorez toutes les informations fournies concernant la demande de réservation</p>
+    </div>
+
+
+    <div class="sb-main-content">
+      <div class="sb-left-container">
+        <div class="sb-infos-container">
+          <div class="bs-name-container">
+            <span class="signet">Prénom</span>
+            <p><%= @booking.user.first_name %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">Nom</span>
+            <p><%= @booking.user.last_name %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">De</span>
+            <p><%= @booking.start_date %></p>
+          </div>
+          <div class="sb-name-container">
+            <span class="signet">à</span>
+            <p><%= @booking.end_date %>/p>
+          </div>
+        </div>
+
+        <div class="sb-button-container">
+          <%= link_to "Accepter", accept_path, data: { turbo_method: :patch }%>
+          <%= link_to "Refuser", decline_path, data: { turbo_method: :patch }, class:"refuse" %>
+        </div>
+      </div>
+
+
+      <div class="sb-pokemon-card">
+        <div class="sb-container">
+          <div class="sb-img-container">
+          <% if @pokemon.photo.attached? %>
+             <%= cl_image_tag @pokemon.photo.key, class: "sb-img" %>
+          <% else %>
+            <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+          <% end %>
+          </div>
+          <div class="sb-pokemon-infos">
+            <div class="sb-name-container">
+              <span class="signet">Nom</span>
+              <p><%= @booking.pokemon.name %></p>
+            </div>
+            <div class="sb-name-container">
+              <span class="signet">Prix</span>
+              <p><%= @booking.pokemon.price %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div>
-  <h5><strong>Souhaitez-vous accepter la demande ?</strong></h5>
-
-  <%= link_to "Accepter", accept_path, data: { turbo_method: :patch }%>
-  <%= link_to "Refuser", decline_path, data: { turbo_method: :patch } %>
-  <%= link_to "Retour à ma liste", my_bookings_path %>
-  </div>
-
 </div>
