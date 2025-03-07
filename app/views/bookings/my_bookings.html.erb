@@ -12,14 +12,16 @@
 <div class="b-parent-container">
 
   <div class="all-status">
-    <div class="b-status-container" id="progress">
+    <div class="b-status-container" id="progress" data-controller ="toggle" >
 
       <div class="b-text-container" id="progress-text">
         <p>Réservations en attente de validation</p>
-        <%= image_tag "vector.png", class:"vector" %>
+      <button class="btn-toggle" data-action="click->toggle#fire">
+        <%= image_tag "vector.png", class:"vector", data: { toggle_target: "arrow" } %>
+      </button>
       </div>
 
-      <div class="booking-container">
+      <div class="booking-container" data-toggle-target="button" >
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == nil %>
           <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
@@ -54,15 +56,15 @@
 
     </div>
 
-    <div class="b-status-container">
+    <div class="b-status-container" data-controller ="toggle">
 
-      <div class="b-text-container">
+      <div class="b-text-container" >
         <p>Réservations Validé</p>
+      <button class="btn-toggle" data-action="click->toggle#fire">
+        <%= image_tag "vector.png", class:"vector", data: { toggle_target: "arrow" } %>
+      </button>
       </div>
-      <div data-controller ="toggle" >
-        <button class="btn-toggle" data-action="click->toggle#fire">
-          <%= image_tag "vector.png", class:"vector" %>
-        </button>
+
 
       <div class="booking-container" id="valid-container"  data-toggle-target="button" >
         <% @bookings.each do |booking| %>
@@ -97,16 +99,18 @@
         <% end %>
       </div>
      </div>
-    </div>
 
-    <div class="b-status-container" id="refuse">
+
+    <div class="b-status-container" id="refuse" data-controller ="toggle">
 
       <div class="b-text-container" id="refuse-text">
         <p>Réservations Refusé</p>
-        <%= image_tag "vector.png", class:"vector" %>
+        <button class="btn-toggle" data-action="click->toggle#fire">
+          <%= image_tag "vector.png", class:"vector", data: { toggle_target: "arrow" } %>
+        </button>
       </div>
 
-      <div class="booking-container">
+      <div class="booking-container" data-toggle-target="button">
         <% @bookings.each do |booking| %>
         <% if booking.pokemon.user_id == current_user.id && booking.status == false %>
         <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
@@ -138,7 +142,7 @@
         <% end %>
         <% end %>
       </div>
-
+     </div>
     </div>
   </div>
 </div>
