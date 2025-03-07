@@ -1,7 +1,5 @@
 <%= render "pages/shared/navbar" %>
 
-<%= render "pages/shared/navbar" %>
-
 <div class="sb-title-container">
     <div class="back-container">
       <i class="fa-solid fa-arrow-left b-icon"></i>
@@ -31,11 +29,11 @@
           </div>
           <div class="sb-name-container">
             <span class="signet">De</span>
-            <p><%= @booking.start_date %></p>
+            <p><%= @booking.start_date.strftime('%d') %>-<%= @booking.start_date.strftime('%b') %>-<%= @booking.start_date.strftime('%y') %></p>
           </div>
           <div class="sb-name-container">
             <span class="signet">à</span>
-            <p><%= @booking.end_date %>/p>
+            <p><%= @booking.end_date.strftime('%d') %>-<%= @booking.end_date.strftime('%b') %>-<%= @booking.end_date.strftime('%y') %></p>
           </div>
         </div>
 
