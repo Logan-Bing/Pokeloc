@@ -31,7 +31,11 @@
                   <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                     <div class="b-booking">
                       <div class="b-img-container">
-                        <%# <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+                        <% if @pokemon.photo.attached? %>
+                          <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                        <% else %>
+                          <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+                        <% end %>
                       </div>
                       <div class="b-infos-container">
                         <div class="b-name-container">
@@ -59,7 +63,7 @@
             </div>
             <div class="b-status-container" data-controller ="toggle">
               <div class="b-text-container" >
-                <p>Réservations Validé</p>
+                <p>Réservations Validées</p>
               <button class="btn-toggle" data-action="click->toggle#fire">
                 <%= image_tag "vector.png", class:"vector", data: { toggle_target: "arrow" } %>
               </button>
@@ -70,7 +74,11 @@
                   <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                     <div class="b-booking">
                       <div class="b-img-container">
-                        <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+                        <% if @pokemon.photo.attached? %>
+                          <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                        <% else %>
+                          <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+                        <% end %>
                       </div>
                       <div class="b-infos-container">
                         <div class="b-name-container">
@@ -98,7 +106,7 @@
             </div>
             <div class="b-status-container" id="refuse" data-controller ="toggle">
               <div class="b-text-container" id="refuse-text">
-                <p>Réservations Refusé</p>
+                <p>Réservations Refusées</p>
                 <button class="btn-toggle" data-action="click->toggle#fire">
                   <%= image_tag "vector.png", class:"vector", data: { toggle_target: "arrow" } %>
                 </button>
@@ -109,7 +117,11 @@
                 <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                   <div class="b-booking">
                     <div class="b-img-container">
-                      <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+                      <% if @pokemon.photo.attached? %>
+                        <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                      <% else %>
+                        <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+                      <% end %>
                     </div>
                     <div class="b-infos-container">
                       <div class="b-name-container">
@@ -147,7 +159,11 @@
                       <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                         <div class="b-booking">
                           <div class="b-img-container">
-                            <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
+                            <% if @pokemon.photo.attached? %>
+                              <%= cl_image_tag @booking.pokemon.photo.key, class: "sb-img" %>
+                            <% else %>
+                              <img src="https://i.pinimg.com/474x/1e/60/87/1e6087cf114c7ced058e98dc1124634d.jpg" alt="">
+                            <% end %>
                           </div>
                           <div class="b-infos-container">
                             <div class="b-name-container">
