@@ -1,14 +1,15 @@
-
 <div class="sb-title-container">
     <div class="back-container">
       <i class="fa-solid fa-arrow-left b-icon"></i>
       <%= link_to "Retour", root_path, class:"b-back" %>
     </div>
-    <h1><%= @booking.user.first_name %> veut réserver votre <%= @booking.pokemon.name %> !</h1>
 </div>
 
-<div class="sb-parent-container">
+  <div class="sb-title">
+    <h1><%= @booking.user.first_name %> veut réserver votre <%= @booking.pokemon.name %> !</h1>
+  </div>
 
+<div class="sb-parent-container">
   <div class="sb-main-container">
     <div class="sb-text-container">
       <p>Explorez toutes les informations fournies concernant la demande de réservation</p>
@@ -28,11 +29,11 @@
           </div>
           <div class="sb-name-container">
             <span class="signet">De</span>
-            <p><%= @booking.start_date %></p>
+            <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
           </div>
           <div class="sb-name-container">
             <span class="signet">à</span>
-            <p><%= @booking.end_date %>/p>
+            <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
           </div>
         </div>
 
