@@ -31,7 +31,7 @@
                   <%= link_to pokemon_booking_path(booking.pokemon, booking), class: "link" do %>
                     <div class="b-booking">
                       <div class="b-img-container">
-                        <%# <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %> %>
+                        <%# <%= cl_image_tag booking.pokemon.photo.key, class: "b-img" %>
                       </div>
                       <div class="b-infos-container">
                         <div class="b-name-container">
@@ -44,11 +44,11 @@
                         </div>
                         <div class="b-date-container">
                           <span class="signet">Début</span>
-                          <p><%= booking.start_date.strftime('%d') %>-<%= @booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
+                          <p><%= booking.start_date.strftime('%d') %>-<%= booking.start_date.strftime('%b') %>-<%= booking.start_date.strftime('%y') %></p>
                         </div>
                         <div class="b-date-container">
                           <span class="signet">Fin</span>
-                          <p><%= booking.end_date.strftime('%d') %>-<%= @booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
+                          <p><%= booking.end_date.strftime('%d') %>-<%= booking.end_date.strftime('%b') %>-<%= booking.end_date.strftime('%y') %></p>
                         </div>
                       </div>
                     </div>
